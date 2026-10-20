@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Protech PC",
+  title: "PROTECH PC",
   description: "Build Your Dream PC With Us Now. Quality, reliable, and professional computer solutions for your home, business, school, and gaming needs.",
 };
 

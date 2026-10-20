@@ -152,7 +152,7 @@ export default function HeroSection() {
                         <div className="mt-9 flex flex-wrap items-center gap-4">
                             <a
                                 href="#services"
-                                className=" bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/80 hover:shadow-primary/30"
+                                className="rounded-[var(--radius)] bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/80 hover:shadow-primary/30"
                             >
                                 Explore our solutions
                                 <span aria-hidden="true" className="ml-2">
@@ -161,7 +161,7 @@ export default function HeroSection() {
                             </a>
                             <a
                                 href="#about"
-                                className="border border-border rounded-radius px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-ring hover:text-foreground"
+                                className="border border-border rounded-[var(--radius)] px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-ring hover:text-foreground"
                             >
                                 Contact Us
                             </a>

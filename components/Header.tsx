@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const sections = ["home", "about", "products", "services", "contact"] as const;
 type Section = (typeof sections)[number];
@@ -103,7 +104,7 @@ const Header = (): JSX.Element => {
 						)
 					))}
 
-					
+					<ModeToggle />
 				</nav>
 
 				{/* Burger Icon */}

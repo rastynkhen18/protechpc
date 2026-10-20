@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SlideShow from "@/components/SlideShow";
-import slideshow from "@/components/SlideShow";
+
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <SlideShow />
+       
       </main>
     </div>
   );

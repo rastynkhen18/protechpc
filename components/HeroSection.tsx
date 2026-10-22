@@ -112,19 +112,15 @@ export default function HeroSection() {
             <div className="container mx-auto max-w-7xl px-6 pb-20 pt-8 sm:px-10 lg:px-12 lg:pb-28">
                 <div className="grid items-center gap-14 pb-6 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-28">
                     <div className="max-w-2xl">
-                        <p className="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.1em] text-primary">
-                            <span className="h-px w-8 bg-primary" />
-                            Your trusted source for PC products and IT solutions
-                        </p>
+                        
                         <h1
                             id="hero-title"
                             className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl"
                         >
-                            Build Your Dream PC 
-                            <span className="block text-primary">With Us.</span>
+                            Build Your Dream PC With Us Now.
                         </h1>
-                        <p className="mt-7 max-w-xl text-md leading-8 text-muted-foreground">
-                            Quality, reliable, and professional computer solutions for your
+                        <p className="mt-5 max-w-xl text-md leading-8 text-muted-foreground">
+                            Your trusted source for PC products and IT solutions. Quality, reliable, and professional computer solutions for your
                             home, business, school, and gaming needs. Whether you are
                             upgrading your setup, building your first gaming PC, or need
                             reliable IT support, ProtechPC is here to help. Our services

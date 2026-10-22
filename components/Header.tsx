@@ -7,12 +7,13 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 import { ModeToggle } from "@/components/mode-toggle";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
+
+
 
 const sections = ["home", "about", "products", "services", "contact"] as const;
 type Section = (typeof sections)[number];
 
-const Logo = (): JSX.Element => (
+const ProtechpcLogo = (): JSX.Element => (
 	<Image src={Protechpc} alt="ProtechPC Logo" className="h-8 w-auto" />
 );
 
@@ -39,6 +40,12 @@ const Header = (): JSX.Element => {
 			setActiveSection(current);
 		};
 
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				setIsOpen(false);
+			}
+		};
+
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
 				mobileMenuRef.current &&
@@ -51,10 +58,13 @@ const Header = (): JSX.Element => {
 
 		window.addEventListener("scroll", handleScroll);
 		document.addEventListener("mousedown", handleClickOutside);
+		document.addEventListener("keydown", handleKeyDown);
+		handleScroll();
 
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 			document.removeEventListener("mousedown", handleClickOutside);
+			document.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
 
@@ -73,8 +83,8 @@ const Header = (): JSX.Element => {
 		>
 			<div className="flex justify-between md:justify-around items-center px-8 py-4">
 				<div>
-					<Link href="/">
-						<Logo />
+					<Link href="/" onClick={() => { window.location.href = "/"; }}>
+						<ProtechpcLogo />
 					</Link>
 				</div>
 
@@ -104,31 +114,21 @@ const Header = (): JSX.Element => {
 							</a>
 						)
 					))}
-					
+
 					<ModeToggle />
 				</nav>
 
 				{/* Burger Icon */}
-				<div className="md:hidden z-20">
-					{isOpen ? (
-						<X
-							size={28}
-							onClick={() => setIsOpen(false)}
-							className={`cursor-pointer ${scrolled
-								? "text-muted-foreground"
-								: "text-muted-foreground"
-								}`}
-						/>
-					) : (
-						<Menu
-							size={28}
-							onClick={() => setIsOpen(true)}
-							className={`cursor-pointer ${scrolled
-								? "text-muted-foreground"
-								: "text-muted-foreground"
-								}`}
-						/>
-					)}
+				<div className="z-20 md:hidden">
+					<button
+						type="button"
+						aria-label={isOpen ? "Close menu" : "Open menu"}
+						aria-expanded={isOpen}
+						onClick={() => setIsOpen((open) => !open)}
+						className="text-muted-foreground"
+					>
+						{isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
+					</button>
 				</div>
 			</div>
 
@@ -175,7 +175,7 @@ const Header = (): JSX.Element => {
 						</a>
 					)
 				))}
-				
+				<ModeToggle />
 			</div>
 		</header>
 	);

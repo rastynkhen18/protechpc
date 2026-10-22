@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import SlideShow from "@/components/SlideShow";
+import SlideShow from "@/components/slide-show";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";

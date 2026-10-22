@@ -14,25 +14,25 @@ const services = [
     icon: ShoppingCart,
     title: "POS Systems Maintenance",
     description:
-      "Keep checkout terminals and peripherals ready for every transaction.",
+      "Regular checkups and servicing of Point of Sale terminals and peripherals to prevent transaction downtime.",
   },
   {
     icon: Laptop,
     title: "Laptop Maintenance",
     description:
-      "Extend device life with performance tune-ups and hardware inspections.",
+      "Preventive servicing for company laptops, including performance tune-ups and hardware inspections.",
   },
   {
     icon: MonitorCog,
-    title: "Office PCs",
+    title: "Office PC Maintenance",
     description:
-      "Maintain fast, dependable workstations with routine care and updates.",
+      "Routine cleaning, software updates, and hardware checks to keep desktop workstations running efficiently.",
   },
   {
     icon: Printer,
-    title: "Printers",
+    title: "Printer Maintenance",
     description:
-      "Reduce paper jams and print issues through scheduled cleaning and service.",
+      "Scheduled cleaning, part checks, and servicing to reduce paper jams and print quality issues",
   },
 ];
 
@@ -48,13 +48,16 @@ export default function Services() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="overflow-hidden border-t border-border bg-background py-20 sm:py-28"
+      className="overflow-hidden bg-background py-10 sm:py-28"
     >
       <div className="container mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
 
         <div className="border-t border-border pt-16 sm:pt-20">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                IT Support and Preventive Maintenance
+              </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">
                 Our Services
               </h2>
@@ -82,13 +85,13 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="grid gap-12 border-t border-border py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              How we work
+              Simple, dependable care.
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-              Simple, dependable care.
+              How we work
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -106,6 +109,13 @@ export default function Services() {
               </div>
             ))}
           </div>
+        </div>
+
+
+
+        <div>
+          WHY CHOOSE US
+          Proactive approach — we catch problems before they cause downtime   Experienced in supporting POS systems, PCs, laptops, and printers   Flexible maintenance schedules tailored to your business hours   Responsive, friendly support you can count on   Affordable preventive care that saves you money on emergency repairs 
         </div>
       </div>
     </section>

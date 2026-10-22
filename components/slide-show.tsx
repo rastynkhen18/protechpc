@@ -29,7 +29,7 @@ export default function TechStackSlideshow() {
             .slideshow-track {
               display: flex;
               width: max-content;
-              animation: scroll-left 100s linear infinite;
+              animation: scroll-left 20s linear infinite;
             }
             @keyframes scroll-left {
               0% { transform: translateX(0); }

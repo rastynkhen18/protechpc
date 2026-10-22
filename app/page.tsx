@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SlideShow from "@/components/SlideShow";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -10,7 +12,8 @@ export default function Home() {
         <Header />
         <HeroSection />
         <SlideShow />
-       
+        <About />
+        <Footer />
       </main>
     </div>
   );

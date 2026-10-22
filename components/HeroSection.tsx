@@ -131,7 +131,7 @@ export default function HeroSection() {
                             include computer repair, preventive maintenance, deep cleaning,
                             troubleshooting, laptop services, and printer services.
                         </p>
-                        <ul className="mt-7 grid max-w-xl gap-3 text-sm text-foreground sm:grid-cols-2">
+                        {/* <ul className="mt-7 grid max-w-xl gap-3 text-sm text-foreground sm:grid-cols-2">
                             {[
                                 "Gaming PC sets",
                                 "Laptops for work and school",
@@ -148,8 +148,8 @@ export default function HeroSection() {
                                     {service}
                                 </li>
                             ))}
-                        </ul>
-                        <div className="mt-9 flex flex-wrap items-center gap-4">
+                        </ul> */}
+                        <div className="mt-5 flex flex-wrap items-center gap-4">
                             <a
                                 href="#services"
                                 className="rounded-[var(--radius)] bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/80 hover:shadow-primary/30"

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 import { ModeToggle } from "@/components/mode-toggle";
+import { NavigationMenu } from "@/components/ui/navigation-menu";
 
 const sections = ["home", "about", "products", "services", "contact"] as const;
 type Section = (typeof sections)[number];
@@ -103,7 +104,7 @@ const Header = (): JSX.Element => {
 							</a>
 						)
 					))}
-
+					
 					<ModeToggle />
 				</nav>
 

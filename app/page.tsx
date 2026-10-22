@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SlideShow from "@/components/slide-show";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 
@@ -16,6 +17,7 @@ export default function Home() {
          <SlideShow />
          <About />  
          <Services />
+         <Contact />
       </main>
     <Footer />
     </div>

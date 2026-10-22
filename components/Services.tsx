@@ -1,12 +1,10 @@
 import {
   CheckCircle2,
-  ClipboardCheck,
   Laptop,
   MonitorCog,
   Printer,
   ShieldCheck,
   ShoppingCart,
-  Wrench,
 } from "lucide-react";
 
 const services = [
@@ -46,9 +44,9 @@ const process = [
 export default function Services() {
   return (
     <section
-      id="about"
+      id="services"
       aria-labelledby="about-title"
-      className="overflow-hidden bg-background py-10 sm:py-28"
+      className="overflow-hidden bg-background py-10"
     >
       <div className="container mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
 
@@ -111,11 +109,47 @@ export default function Services() {
           </div>
         </div>
 
+        <div className="border-y border-border py-16 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <div>
+              {/* <div className="flex size-12 items-center justify-center rounded-2xl bg-muted">
+                <ShieldCheck className="size-6" />
+              </div> */}
+              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Why choose us
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Technology support with fewer surprises.
+              </h2>
+              <p className="mt-4 max-w-md leading-7 text-muted-foreground">
+                We take care of the details behind the scenes so your team can
+                focus on serving customers.
+              </p>
+            </div>
 
-
-        <div>
-          WHY CHOOSE US
-          Proactive approach — we catch problems before they cause downtime   Experienced in supporting POS systems, PCs, laptops, and printers   Flexible maintenance schedules tailored to your business hours   Responsive, friendly support you can count on   Affordable preventive care that saves you money on emergency repairs 
+            <div className="grid divide-y divide-border">
+              {[
+                "Proactive checks before small issues become downtime",
+                "Experienced support for POS systems, PCs, laptops, and printers",
+                "Maintenance schedules built around your business hours",
+                "Responsive, friendly support when you need it",
+                "Affordable care that helps reduce emergency repair costs",
+              ].map((benefit, index) => (
+                <div
+                  key={benefit}
+                  className="flex items-start gap-4 py-5 first:pt-0 last:pb-0"
+                >
+                  <span className="mt-0.5 text-sm font-semibold text-muted-foreground">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex gap-3">
+                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-500" />
+                    <p className="leading-7">{benefit}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

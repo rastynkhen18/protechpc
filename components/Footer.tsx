@@ -4,7 +4,7 @@ import Protechpc from "@/assets/protechpc.png";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-muted/30">
       <iframe
         title="Find ProtechPC on Google Maps"
         src="https://www.google.com/maps?q=PROTECH+PC+-+Muzon&output=embed"

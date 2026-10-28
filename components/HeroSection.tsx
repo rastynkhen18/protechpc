@@ -156,7 +156,7 @@ export default function HeroSection() {
                                 </span>
                             </a>
                             <a
-                                href="#about"
+                                href="#contact"
                                 className="border border-border rounded-[var(--radius)] px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-ring hover:text-foreground"
                             >
                                 Contact Us

@@ -33,7 +33,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="container mx-auto max-w-7xl px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
+      className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
     >
       <div className="grid gap-12 border-t border-border pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
         <div>

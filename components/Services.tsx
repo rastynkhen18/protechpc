@@ -48,7 +48,7 @@ export default function Services() {
       aria-labelledby="about-title"
       className="overflow-hidden bg-background py-10"
     >
-      <div className="container mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
 
         <div className="border-t border-border pt-16 sm:pt-20">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">

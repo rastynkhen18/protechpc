@@ -81,7 +81,7 @@ const Header = (): JSX.Element => {
 				: "bg-background text-foreground"
 				}`}
 		>
-			<div className="flex justify-between md:justify-around items-center px-8 py-4">
+			<div className="max-w-7xl mx-auto flex justify-between items-center px-10 py-4">
 				<div>
 					<Link href="/" onClick={() => { window.location.href = "/"; }}>
 						<ProtechpcLogo />
@@ -101,6 +101,7 @@ const Header = (): JSX.Element => {
 								key={section}
 								href="/"
 								className={getLinkClass(section)}
+								onClick={() => { window.location.href = "/"; }}
 							>
 								{section.charAt(0).toUpperCase() + section.slice(1)}
 							</Link>
@@ -115,7 +116,7 @@ const Header = (): JSX.Element => {
 						)
 					))}
 
-					<ModeToggle />
+					
 				</nav>
 
 				{/* Burger Icon */}
@@ -130,6 +131,7 @@ const Header = (): JSX.Element => {
 						{isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
 					</button>
 				</div>
+				<ModeToggle />
 			</div>
 
 			{/* Mobile Menu Overlay */}
@@ -160,7 +162,10 @@ const Header = (): JSX.Element => {
 							key={section}
 							href="/"
 							className={getLinkClass(section)}
-							onClick={() => setIsOpen(false)}
+							onClick={() => {
+								setIsOpen(false);
+								window.location.reload();
+							}}
 						>
 							{section.charAt(0).toUpperCase() + section.slice(1)}
 						</Link>

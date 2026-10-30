@@ -12,7 +12,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-us-title"
-      className="container mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-28"
+      className="max-w-7xl mx-auto px-6 py-20 sm:px-10 lg:px-12 lg:py-28"
     >
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
 

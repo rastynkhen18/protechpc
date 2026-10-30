@@ -116,7 +116,7 @@ const Header = (): JSX.Element => {
 						)
 					))}
 
-					
+
 				</nav>
 
 				{/* Burger Icon */}
@@ -131,7 +131,9 @@ const Header = (): JSX.Element => {
 						{isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
 					</button>
 				</div>
-				<ModeToggle />
+				<div className="hidden md:flex items-center">
+					<ModeToggle />
+				</div>
 			</div>
 
 			{/* Mobile Menu Overlay */}

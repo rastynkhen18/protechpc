@@ -44,7 +44,7 @@ export default function Contact() {
             id="contact-title"
             className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
           >
-            Keep your technology running smoothly.
+            Let's Power Up Your Technology
           </h2>
           <p className="mt-5 max-w-md leading-7 text-muted-foreground">
             Need help with a PC, POS system, laptop, or printer? Get in touch

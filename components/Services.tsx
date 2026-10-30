@@ -10,35 +10,47 @@ import {
 const services = [
   {
     icon: ShoppingCart,
-    title: "POS Systems Maintenance",
+    title: "Custom PC Build & Upgrade",
     description:
-      "Regular checkups and servicing of Point of Sale terminals and peripherals to prevent transaction downtime.",
+      "Systems built and upgraded to your budget and performance goals, with compatible, quality components.",
   },
   {
     icon: Laptop,
-    title: "Laptop Maintenance",
+    title: "Installation & Setup",
     description:
-      "Preventive servicing for company laptops, including performance tune-ups and hardware inspections.",
+      "Hands-on setup of computers, printers, and peripherals, including operating system and software installation.",
   },
   {
     icon: MonitorCog,
-    title: "Office PC Maintenance",
+    title: "Repair & Troubleshooting",
     description:
-      "Routine cleaning, software updates, and hardware checks to keep desktop workstations running efficiently.",
+      "Diagnosis and repair of hardware and software problems to get you back up and running quickly.",
   },
   {
     icon: Printer,
-    title: "Printer Maintenance",
+    title: "Preventive Maintenance",
     description:
-      "Scheduled cleaning, part checks, and servicing to reduce paper jams and print quality issues",
+      "Cleaning, tune-ups, and system checks that extend equipment life and prevent costly breakdowns.",
+  },
+  {
+    icon: MonitorCog,
+    title: "Office & Business Solutions",
+    description:
+      "Bulk equipment supply and workstation setups tailored to the needs of offices and small businesses.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "After-Sales Support",
+    description:
+      "Friendly, responsive support and guidance on warranty and product concerns after your purchase.",
   },
 ];
 
 const process = [
-  ["01", "Assess", "We inspect your equipment and current setup."],
-  ["02", "Schedule", "We build a maintenance plan around your hours."],
-  ["03", "Maintain", "We perform preventive checks and servicing."],
-  ["04", "Report", "We share clear findings and recommendations."],
+  ["1", "Consult", "Understand your needs, budget, and use case"],
+  ["2", "Recommend", "Suggest the right products and configuration"],
+  ["3", "Deliver & Set Up", "Prepare, install, and test your equipment"],
+  ["4", "Support", "Provide after-sales help and maintenance"],
 ];
 
 export default function Services() {
@@ -54,14 +66,14 @@ export default function Services() {
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                IT Support and Preventive Maintenance
+              Our Services
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-                Our Services
+               IT Support and Preventive Maintenance
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-6 text-muted-foreground">
-              We offer comprehensive preventive maintenance services for the technology your business relies on every day:
+              Professional support that goes hand in hand with every product we sell:
             </p>
           </div>
 
@@ -86,10 +98,10 @@ export default function Services() {
         <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Simple, dependable care.
+            Simple, dependable care.
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-              How we work
+            How We Work
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -116,24 +128,24 @@ export default function Services() {
                 <ShieldCheck className="size-6" />
               </div> */}
               <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                Why choose us
+                Why Choose Us
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
                 Technology support with fewer surprises.
               </h2>
               <p className="mt-4 max-w-md leading-7 text-muted-foreground">
-                We take care of the details behind the scenes so your team can
-                focus on serving customers.
+                Friendly, responsive after-sales support you can count on.
               </p>
             </div>
 
             <div className="grid divide-y divide-border">
               {[
-                "Proactive checks before small issues become downtime",
-                "Experienced support for POS systems, PCs, laptops, and printers",
-                "Maintenance schedules built around your business hours",
-                "Responsive, friendly support when you need it",
-                "Affordable care that helps reduce emergency repair costs",
+                "Complete range — PC sets, gaming PCs, laptops, peripherals, printers, and parts under one roof",
+                "Quality, genuine products from trusted brands at competitive prices",
+                "Knowledgeable team that recommends what fits your needs and budget, not just what is in stock",
+                "Custom builds and upgrades tailored to your performance goals",
+                "In-house setup, repair, and maintenance services for complete peace of mind",
+                "Friendly, responsive after-sales support you can count on",
               ].map((benefit, index) => (
                 <div
                   key={benefit}

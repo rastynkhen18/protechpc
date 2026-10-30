@@ -128,7 +128,7 @@ export default function Services() {
         </FadeInOnView>
 
         <FadeInOnView>
-          <div className="border-y border-border py-16 sm:py-20">
+          <div className="border-t border-border py-16 sm:py-20">
             <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
               <div>
                 {/* <div className="flex size-12 items-center justify-center rounded-2xl bg-muted">

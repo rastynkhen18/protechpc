@@ -10,7 +10,7 @@ const services = [
 export default function About() {
   return (
     <section
-      id="about-us"
+      id="about"
       aria-labelledby="about-us-title"
       className="container mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-28"
     >

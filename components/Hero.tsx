@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import ProtechPcLogo from "../assets/protechpc.png";
+import SlideShow from "@/components/slideShow";
 
 
 
@@ -112,7 +113,7 @@ export default function HeroSection() {
             <div className="container mx-auto max-w-7xl px-6 pb-20 pt-8 sm:px-10 lg:px-12 lg:pb-28">
                 <div className="grid items-center gap-14 pb-6 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-28">
                     <div className="max-w-2xl">
-                        
+
                         <h1
                             id="hero-title"
                             className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl"
@@ -163,12 +164,9 @@ export default function HeroSection() {
                             </a>
                         </div>
                     </div>
-
-                  
                 </div>
-               
-
             </div>
+            <SlideShow />
         </section>
     );
 }

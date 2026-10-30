@@ -6,7 +6,6 @@ import ProtechPcLogo from "../assets/protechpc.png";
 import SlideShow from "@/components/slideShow";
 
 
-
 export default function HeroSection() {
     const heroRef = useRef<HTMLElement>(null);
 
@@ -110,6 +109,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" />
             <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)]" />
 
+            {/* // Hero content */}
             <div className="max-w-7xl mx-auto px-6 pb-20 pt-8 sm:px-10 lg:px-12 lg:pb-28">
                 <div className="grid items-center gap-14 pb-6 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-28">
                     <div className="max-w-2xl">

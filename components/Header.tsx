@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 import { ModeToggle } from "@/components/mode-toggle";
-
+import facebook from "@/assets/facebook-icon.svg";
 
 
 const sections = ["home", "about", "products", "services", "contact"] as const;
@@ -132,6 +132,10 @@ const Header = (): JSX.Element => {
 					</button>
 				</div>
 				<div className="hidden md:flex items-center">
+					<Link href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
+						<Image src={facebook} alt="Facebook" className="mr-2 h-5 w-5" />
+					</Link>
+					<div className="mx-2 h-6 border-l border-border" aria-hidden="true" />
 					<ModeToggle />
 				</div>
 			</div>

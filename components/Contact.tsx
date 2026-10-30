@@ -1,5 +1,6 @@
 import React from 'react'
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import FadeInOnView from "@/components/FadeInOnView";
 
 const contactDetails = [
   {
@@ -36,7 +37,8 @@ export default function Contact() {
       className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
     >
       <div className="grid gap-12 border-t border-border pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
-        <div>
+        <FadeInOnView>
+          <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             Let&apos;s work together
           </p>
@@ -44,7 +46,7 @@ export default function Contact() {
             id="contact-title"
             className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
           >
-            Let's Power Up Your Technology
+            Let&apos;s Power Up Your Technology
           </h2>
           <p className="mt-5 max-w-md leading-7 text-muted-foreground">
             Need help with a PC, POS system, laptop, or printer? Get in touch
@@ -76,9 +78,11 @@ export default function Contact() {
               </a>
             ))}
           </div>
-        </div>
+          </div>
+        </FadeInOnView>
 
-        <div className="mt-8">
+        <FadeInOnView>
+          <div className="mt-8">
           <form
             action="mailto:protechpcstore@gmail.com"
             method="post"
@@ -150,7 +154,8 @@ export default function Contact() {
               Send Message
             </button>
           </form>
-        </div>
+          </div>
+        </FadeInOnView>
       </div>
     </section>
   );

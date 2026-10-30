@@ -59,7 +59,7 @@ export default function Footer() {
               protechpcstore@gmail.com
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/ProTechPcStore"
               target="_blank"
               rel="noreferrer"
               className="block hover:text-foreground"

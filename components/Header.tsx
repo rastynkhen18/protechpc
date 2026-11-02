@@ -300,9 +300,9 @@ const Header = (): JSX.Element => {
 						aria-label={isOpen ? "Close menu" : "Open menu"}
 						aria-expanded={isOpen}
 						onClick={() => setIsOpen((open) => !open)}
-						className="text-muted-foreground"
+						className="flex size-10 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
 					>
-						{isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
+						{isOpen ? <X className="size-6" aria-hidden="true" /> : <Menu className="size-6" aria-hidden="true" />}
 					</button>
 				</div>
 				<div className="hidden md:flex items-center">

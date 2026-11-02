@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="space-y-3 text-sm text-muted-foreground">
 
             <a href="tel:+639XXXXXXXXX" className="block hover:text-foreground">
-              +63 967 082 1565
+              0967 082 1565
             </a>
             <a
               href="mailto:protechpc@example.com"
@@ -72,7 +72,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto flex  flex-col gap-4 border-t border-border px-6 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 ProtechPC. All rights reserved.</p>
+        <p>© 2026 ProTechPC. All rights reserved.</p>
         <div className="hidden md:flex gap-5">
           <a href="#home" className="flex items-center gap-1 hover:text-foreground">
             <ArrowUp className="size-4" aria-hidden="true" />

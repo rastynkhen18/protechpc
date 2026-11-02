@@ -12,7 +12,7 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Call us",
-    value: "+63 967 082 1565",
+    value: "0967 082 1565",
     href: "tel:+639670821565",
   },
   {

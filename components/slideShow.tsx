@@ -20,7 +20,7 @@ export default function TechStackSlideshow() {
 
   return (
     <section>
-        <div className="flex w-full flex-col items-center justify-center bg-background py-5 container mx-auto sm:w-[85%] md:w-[70%] lg:w-[62%]">
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
           <style>{`
             .slideshow-viewport {
               width: 100%;

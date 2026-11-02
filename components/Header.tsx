@@ -4,14 +4,111 @@ import { useEffect, useRef, useState } from "react";
 import type { JSX } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import {
+	Cpu,
+	Gamepad2,
+	Keyboard,
+	Laptop,
+	Menu,
+	Monitor,
+	MonitorCog,
+	Printer,
+	ShoppingCart,
+	X,
+} from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 import { ModeToggle } from "@/components/mode-toggle";
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import facebook from "@/assets/facebook-icon.svg";
 
 
 const sections = ["home", "about", "products", "services", "contact"] as const;
 type Section = (typeof sections)[number];
+
+const products = [
+	{
+		title: "PC Sets",
+		icon: Monitor,
+		description:
+			"Complete desktop packages for home, school, and office use, ready to plug in and perform from day one.",
+	},
+	{
+		title: "Gaming PCs",
+		icon: Gamepad2,
+		description:
+			"High-performance gaming rigs built for smooth gameplay, fast load times, and room to upgrade.",
+	},
+	{
+		title: "Laptops",
+		icon: Laptop,
+		description:
+			"A wide range of laptops for students, professionals, and creators, from everyday models to performance machines.",
+	},
+	{
+		title: "Peripherals",
+		icon: Keyboard,
+		description:
+			"Monitors, keyboards, mice, headsets, webcams, speakers, and other accessories to complete any setup.",
+	},
+	{
+		title: "Printers",
+		icon: Printer,
+		description:
+			"Reliable printing, scanning, and copying solutions for home, small business, and office needs.",
+	},
+	{
+		title: "Computer Parts",
+		icon: Cpu,
+		description:
+			"Processors, graphics cards, memory, storage, motherboards, power supplies, and cooling for builds and upgrades.",
+	},
+] as const;
+
+const services = [
+	{
+		icon: ShoppingCart,
+		title: "Custom PC Build & Upgrade",
+		description:
+			"Systems built and upgraded to your budget and performance goals, with compatible, quality components.",
+	},
+	{
+		icon: Laptop,
+		title: "Installation & Setup",
+		description:
+			"Hands-on setup of computers, printers, and peripherals, including operating system and software installation.",
+	},
+	{
+		icon: MonitorCog,
+		title: "Repair & Troubleshooting",
+		description:
+			"Diagnosis and repair of hardware and software problems to get you back up and running quickly.",
+	},
+	{
+		icon: Printer,
+		title: "Preventive Maintenance",
+		description:
+			"Cleaning, tune-ups, and system checks that extend equipment life and prevent costly breakdowns.",
+	},
+	{
+		icon: MonitorCog,
+		title: "Office & Business Solutions",
+		description:
+			"Bulk equipment supply and workstation setups tailored to the needs of offices and small businesses.",
+	},
+	{
+		icon: ShoppingCart,
+		title: "After-Sales Support",
+		description:
+			"Friendly, responsive support and guidance on warranty and product concerns after your purchase.",
+	},
+] as const;
 
 const ProtechpcLogo = (): JSX.Element => (
 	<Image src={Protechpc} alt="ProtechPC Logo" className="h-8 w-auto" />
@@ -89,35 +186,102 @@ const Header = (): JSX.Element => {
 				</div>
 
 				{/* Desktop Nav */}
-				<nav
-					className={`hidden md:flex justify-center items-center gap-10 ${scrolled
-						? "text-foreground"
-						: "text-foreground"
-						}`}
-				>
-					{sections.map((section) => (
-						section === "home" ? (
-							<Link
-								key={section}
-								href="/"
-								className={getLinkClass(section)}
-								onClick={() => { window.location.href = "/"; }}
-							>
-								{section.charAt(0).toUpperCase() + section.slice(1)}
-							</Link>
-						) : (
-							<a
-								key={section}
-								href={`#${section}`}
-								className={getLinkClass(section)}
-							>
-								{section.charAt(0).toUpperCase() + section.slice(1)}
-							</a>
-						)
-					))}
-
-
-				</nav>
+				<NavigationMenu className="hidden md:flex max-w-none flex-none">
+					<NavigationMenuList className="gap-10">
+						{sections.map((section) => (
+							<NavigationMenuItem key={section}>
+								{section === "products" ? (
+									<>
+										<NavigationMenuTrigger
+											className={`${getLinkClass(section)} cursor-pointer rounded-none px-0 hover:bg-transparent focus:bg-transparent`}
+											aria-current={activeSection === section ? "page" : undefined}
+										>
+											Products
+										</NavigationMenuTrigger>
+										<NavigationMenuContent>
+											<ul className="grid w-[min(90vw,640px)] grid-cols-2 gap-1 p-2">
+												{products.map((product) => (
+													<li key={product.title}>
+														<NavigationMenuLink
+															className="cursor-pointer items-start gap-3"
+															render={
+																<a href="#products" className="cursor-pointer items-start">
+																	<product.icon
+																		className="mt-0.5 size-5 shrink-0 text-primary"
+																		aria-hidden="true"
+																	/>
+																	<span className="flex flex-col gap-1">
+																		<span className="font-medium">{product.title}</span>
+																		<span className="text-muted-foreground text-xs leading-relaxed">
+																			{product.description}
+																		</span>
+																	</span>
+																</a>
+															}
+														/>
+													</li>
+												))}
+											</ul>
+										</NavigationMenuContent>
+									</>
+								) : section === "services" ? (
+									<>
+										<NavigationMenuTrigger
+											className={`${getLinkClass(section)} cursor-pointer rounded-none px-0 hover:bg-transparent focus:bg-transparent`}
+											aria-current={activeSection === section ? "page" : undefined}
+										>
+											Services
+										</NavigationMenuTrigger>
+										<NavigationMenuContent>
+											<ul className="grid w-[min(90vw,640px)] grid-cols-2 gap-1 p-2">
+												{services.map((service) => (
+													<li key={service.title}>
+														<NavigationMenuLink
+															className="cursor-pointer items-start gap-3"
+															render={
+																<a href="#services" className="cursor-pointer items-start">
+																	<service.icon
+																		className="mt-0.5 size-5 shrink-0 text-primary"
+																		aria-hidden="true"
+																	/>
+																	<span className="flex flex-col gap-1">
+																		<span className="font-medium">{service.title}</span>
+																		<span className="text-muted-foreground text-xs leading-relaxed">
+																			{service.description}
+																		</span>
+																	</span>
+																</a>
+															}
+														/>
+													</li>
+												))}
+											</ul>
+										</NavigationMenuContent>
+									</>
+								) : (
+									<NavigationMenuLink
+										className={`${getLinkClass(section)} cursor-pointer rounded-none p-0 hover:bg-transparent focus:bg-transparent`}
+										aria-current={activeSection === section ? "page" : undefined}
+										render={
+											section === "home" ? (
+												<Link
+													href="/"
+													onClick={() => { window.location.href = "/"; }}
+												>
+													{section.charAt(0).toUpperCase() + section.slice(1)}
+												</Link>
+											) : (
+												<a href={`#${section}`}>
+													{section.charAt(0).toUpperCase() + section.slice(1)}
+												</a>
+											)
+										}
+									/>
+								)}
+							</NavigationMenuItem>
+						))}
+					</NavigationMenuList>
+				</NavigationMenu>
 
 				{/* Burger Icon */}
 				<div className="z-20 md:hidden">

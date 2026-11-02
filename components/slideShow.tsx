@@ -19,7 +19,7 @@ export default function TechStackSlideshow() {
   const repeatedTechStack = [...techStack, ...techStack, ...techStack];
 
   return (
-    <section>
+    <section className="relative z-10 bg-background">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <style>{`
             .slideshow-viewport {

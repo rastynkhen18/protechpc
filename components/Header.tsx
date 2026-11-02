@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
 	Cpu,
+	ChevronDown,
 	Gamepad2,
 	Keyboard,
 	Laptop,
@@ -119,6 +120,7 @@ const Header = (): JSX.Element => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const [activeSection, setActiveSection] = useState<Section>("home");
+	const [mobileExpandedSection, setMobileExpandedSection] = useState<"products" | "services" | null>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -164,6 +166,14 @@ const Header = (): JSX.Element => {
 			document.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
+
+	useEffect(() => {
+		document.body.style.overflow = isOpen ? "hidden" : "";
+
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [isOpen]);
 
 	const getLinkClass = (section: Section): string =>
 		`pb-1 transition-all duration-300 ${activeSection === section
@@ -316,42 +326,92 @@ const Header = (): JSX.Element => {
 			{/* Mobile Menu */}
 			<div
 				ref={mobileMenuRef}
-				className={`fixed z-40 top-16 right-0 w-4/5 max-w-sm h-screen ${scrolled
-					? "bg-card text-foreground"
-					: "bg-card text-foreground"
-					} flex flex-col justify-start items-start gap-6 px-10 py-5 text-base transition-all duration-300 md:hidden ${isOpen
+				className={`fixed inset-0 z-40 h-dvh w-full overflow-hidden bg-card text-foreground shadow-xl transition-all duration-300 md:hidden ${isOpen
 						? "translate-x-0 opacity-100"
 						: "translate-x-full opacity-0 pointer-events-none"
-					} ${scrolled
-						? "text-foreground"
-						: "text-foreground"
 					}`}
 			>
-				{sections.map((section) => (
-					section === "home" ? (
-						<Link
-							key={section}
-							href="/"
-							className={getLinkClass(section)}
-							onClick={() => {
-								setIsOpen(false);
-								window.location.reload();
-							}}
-						>
-							{section.charAt(0).toUpperCase() + section.slice(1)}
-						</Link>
-					) : (
-						<a
-							key={section}
-							href={`#${section}`}
-							className={getLinkClass(section)}
-							onClick={() => setIsOpen(false)}
-						>
-							{section.charAt(0).toUpperCase() + section.slice(1)}
-						</a>
-					)
-				))}
-				<ModeToggle />
+				<div className="flex items-center justify-between border-b border-border px-6 py-5">
+					<Link
+						href="/"
+						aria-label="Go to homepage"
+						onClick={() => {
+							setIsOpen(false);
+							window.location.reload();
+						}}
+					>
+						<ProtechpcLogo />
+					</Link>
+					<button
+						type="button"
+						aria-label="Close menu"
+						onClick={() => setIsOpen(false)}
+						className="cursor-pointer rounded-md p-1 text-muted-foreground transition-colors hover:text-foreground"
+					>
+						<X size={26} aria-hidden="true" />
+					</button>
+				</div>
+				<nav className="flex w-full flex-col px-6 text-base font-medium">
+					{sections.map((section) => (
+						<div key={section} className="border-b border-border">
+							{section === "products" || section === "services" ? (
+								<>
+									<button
+										type="button"
+										aria-expanded={mobileExpandedSection === section}
+										onClick={() => setMobileExpandedSection((current) => current === section ? null : section)}
+										className={`${getLinkClass(section)} flex w-full cursor-pointer items-center justify-between border-transparent py-4 text-left`}
+									>
+										{section.charAt(0).toUpperCase() + section.slice(1)}
+										<ChevronDown
+											className={`size-4 transition-transform ${mobileExpandedSection === section ? "rotate-180" : ""}`}
+											aria-hidden="true"
+										/>
+									</button>
+									{mobileExpandedSection === section && (
+										<div className="border-t border-border pb-2 pl-4">
+											{(section === "products" ? products : services).map((item) => (
+												<a
+													key={item.title}
+													href={`#${section}`}
+													onClick={() => setIsOpen(false)}
+													className="block cursor-pointer py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+												>
+													{item.title}
+												</a>
+											))}
+										</div>
+									)}
+								</>
+							) : section === "home" ? (
+								<Link
+									href="/"
+									className={`${getLinkClass(section)} block cursor-pointer border-transparent py-4`}
+									onClick={() => {
+										setIsOpen(false);
+										window.location.reload();
+									}}
+								>
+									Home
+								</Link>
+							) : (
+								<a
+									href={`#${section}`}
+									className={`${getLinkClass(section)} block cursor-pointer border-transparent py-4`}
+									onClick={() => setIsOpen(false)}
+								>
+									{section.charAt(0).toUpperCase() + section.slice(1)}
+								</a>
+							)}
+						</div>
+					))}
+				</nav>
+				<div className="mt-auto flex items-center gap-4 px-6 py-6">
+					<ModeToggle />
+					<Link href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
+						<Image src={facebook} alt="Facebook" className="h-5 w-5" />
+					</Link>
+				</div>
 			</div>
 		</header>
 	);

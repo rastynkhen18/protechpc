@@ -316,20 +316,22 @@ const Header = (): JSX.Element => {
 			</div>
 
 			{/* Mobile Menu Overlay */}
-			{isOpen && (
-				<div
-					className="fixed inset-0 bg-black/40 z-30 top-16 md:hidden"
-					onClick={() => setIsOpen(false)}
-				/>
-			)}
+			<div
+				className={`fixed inset-0 z-30 bg-black/40 transition-opacity duration-300 ease-in-out md:hidden ${
+					isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+				}`}
+				onClick={() => setIsOpen(false)}
+				aria-hidden="true"
+			/>
 
 			{/* Mobile Menu */}
 			<div
 				ref={mobileMenuRef}
-				className={`fixed inset-0 z-40 h-dvh w-full overflow-hidden bg-card text-foreground shadow-xl transition-all duration-300 md:hidden ${isOpen
+				className={`fixed inset-0 z-40 h-dvh w-full overflow-hidden bg-card text-foreground shadow-xl transition-[transform,opacity] duration-300 ease-in-out md:hidden ${
+					isOpen
 						? "translate-x-0 opacity-100"
-						: "translate-x-full opacity-0 pointer-events-none"
-					}`}
+						: "pointer-events-none translate-x-full opacity-0"
+				}`}
 			>
 				<div className="flex items-center justify-between border-b border-border px-6 py-5">
 					<Link

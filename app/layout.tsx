@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ProTechPC",
-  description: "Build Your Dream PC With Us Now. Quality, reliable, and professional computer solutions for your home, business, school, and gaming needs.",
+  description: "Build Your Dream PC With Us Now.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

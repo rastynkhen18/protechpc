@@ -188,7 +188,7 @@ const Header = (): JSX.Element => {
 				: "bg-background text-foreground"
 				}`}
 		>
-			<div className="max-w-7xl mx-auto flex justify-between items-center px-10 py-4">
+			<div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-4">
 				<div>
 					<Link href="/" onClick={() => { window.location.href = "/"; }}>
 						<ProtechpcLogo />
@@ -300,9 +300,9 @@ const Header = (): JSX.Element => {
 						aria-label={isOpen ? "Close menu" : "Open menu"}
 						aria-expanded={isOpen}
 						onClick={() => setIsOpen((open) => !open)}
-						className="flex size-10 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
+						className="cursor-pointer rounded-md p-1 text-muted-foreground transition-colors hover:text-foreground"
 					>
-						{isOpen ? <X className="size-6" aria-hidden="true" /> : <Menu className="size-6" aria-hidden="true" />}
+						{isOpen ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
 					</button>
 				</div>
 				<div className="hidden md:flex items-center">

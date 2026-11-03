@@ -48,7 +48,7 @@ export default function HeroSection() {
         >
             {/* <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-24 -z-10 opacity-40 transition-transform duration-500 ease-out"
+                className="pointer-events-none absolute -inset-10 -z-10 opacity-20 transition-transform duration-500 ease-out sm:-inset-16 sm:opacity-30 lg:-inset-24 lg:opacity-40"
                 style={{
                     transform: "translate3d(var(--mesh-x), var(--mesh-y), 0)",
                 }}
@@ -108,7 +108,7 @@ export default function HeroSection() {
                 </svg>
             </div>
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" />
-            <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)]" /> */}
+            <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
 
             {/* // Hero content */}
             <div className="max-w-7xl mx-auto px-6 pb-20 pt-8 sm:px-10 lg:px-12 lg:pb-28">
@@ -116,7 +116,7 @@ export default function HeroSection() {
                     <div className="relative z-10 max-w-2xl">
                         <h1
                             id="hero-title"
-                            className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl"
+                            className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-5xl"
                         >
                             Build Your Dream PC With Us Now.
                         </h1>
@@ -168,7 +168,7 @@ export default function HeroSection() {
                     <Image
                         src={ProtechPcHeroLogo}
                         alt="ProtechPC Logo"
-                        className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto w-full max-w-md -translate-x-1/2 -translate-y-1/2 opacity-15 lg:relative lg:left-auto lg:top-auto lg:z-auto lg:translate-x-0 lg:translate-y-0 lg:max-w-lg lg:opacity-100"
+                        className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto w-full max-w-xs -translate-x-1/2 -translate-y-1/2 opacity-15 sm:max-w-md lg:relative lg:left-auto lg:top-auto lg:z-auto lg:translate-x-0 lg:translate-y-0 lg:max-w-lg lg:opacity-100"
                     />
                 </div>
             </div>

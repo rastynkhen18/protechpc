@@ -111,8 +111,8 @@ export default function HeroSection() {
             <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
 
             {/* // Hero content */}
-            <div className="max-w-7xl mx-auto px-6 pb-20 pt-8 sm:px-10 lg:px-12 lg:pb-28">
-                <div className="relative grid items-center gap-14 pb-6 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-28">
+            <div className="max-w-7xl mx-auto px-6 pb-0 pt-8 sm:px-10 lg:px-12">
+                <div className="relative grid items-center gap-14 pb-8 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:pt-28">
                     <div className="relative z-10 max-w-2xl">
                         <h1
                             id="hero-title"

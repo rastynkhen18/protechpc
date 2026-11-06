@@ -53,8 +53,7 @@ const process = [
   ["3", "Deliver & Set Up", "Prepare, install, and test your equipment"],
   ["4", "Support", "Provide after-sales help and maintenance"],
 ];
-
-export default function Services() {
+export default function page() {
   return (
     <section
       id="services"
@@ -173,5 +172,5 @@ export default function Services() {
         </FadeInOnView>
       </div>
     </section>
-  );
+  )
 }

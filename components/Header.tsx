@@ -30,7 +30,7 @@ import {
 import facebook from "@/assets/facebook-icon.svg";
 
 
-const sections = ["home", "about", "products", "services", "contact"] as const;
+const sections = ["home", "products", "services", "about", "contact", "blog"] as const;
 type Section = (typeof sections)[number];
 
 const products = [
@@ -190,7 +190,7 @@ const Header = (): JSX.Element => {
 		>
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-4">
 				<div>
-					<Link href="/" onClick={() => { window.location.href = "/"; }}>
+					<Link href="/">
 						<ProtechpcLogo />
 					</Link>
 				</div>
@@ -215,7 +215,7 @@ const Header = (): JSX.Element => {
 														<NavigationMenuLink
 															className="cursor-pointer items-start gap-3"
 															render={
-																<a href="#products" className="cursor-pointer items-start">
+																<Link href="/products" className="cursor-pointer items-start">
 																	<product.icon
 																		className="mt-0.5 size-5 shrink-0 text-primary"
 																		aria-hidden="true"
@@ -226,7 +226,7 @@ const Header = (): JSX.Element => {
 																			{product.description}
 																		</span>
 																	</span>
-																</a>
+																</Link>
 															}
 														/>
 													</li>
@@ -249,7 +249,7 @@ const Header = (): JSX.Element => {
 														<NavigationMenuLink
 															className="cursor-pointer items-start gap-3"
 															render={
-																<a href="#services" className="cursor-pointer items-start">
+																<Link href="/services" className="cursor-pointer items-start">
 																	<service.icon
 																		className="mt-0.5 size-5 shrink-0 text-primary"
 																		aria-hidden="true"
@@ -260,7 +260,7 @@ const Header = (): JSX.Element => {
 																			{service.description}
 																		</span>
 																	</span>
-																</a>
+																</Link>
 															}
 														/>
 													</li>
@@ -276,14 +276,13 @@ const Header = (): JSX.Element => {
 											section === "home" ? (
 												<Link
 													href="/"
-													onClick={() => { window.location.href = "/"; }}
 												>
 													{section.charAt(0).toUpperCase() + section.slice(1)}
 												</Link>
 											) : (
-												<a href={`#${section}`}>
+												<Link href={`/${section}`}>
 													{section.charAt(0).toUpperCase() + section.slice(1)}
-												</a>
+												</Link>
 											)
 										}
 									/>
@@ -311,15 +310,14 @@ const Header = (): JSX.Element => {
 					<Link href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
 						<Image src={facebook} alt="Facebook" className="mx-2 h-5 w-5" />
 					</Link>
-					
+
 				</div>
 			</div>
 
 			{/* Mobile Menu Overlay */}
 			<div
-				className={`fixed inset-0 z-30 bg-black/40 transition-opacity duration-300 ease-in-out md:hidden ${
-					isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-				}`}
+				className={`fixed inset-0 z-30 bg-black/40 transition-opacity duration-300 ease-in-out md:hidden ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+					}`}
 				onClick={() => setIsOpen(false)}
 				aria-hidden="true"
 			/>
@@ -327,11 +325,10 @@ const Header = (): JSX.Element => {
 			{/* Mobile Menu */}
 			<div
 				ref={mobileMenuRef}
-				className={`fixed inset-0 z-40 h-dvh w-full overflow-hidden bg-card text-foreground shadow-xl transition-[transform,opacity] duration-300 ease-in-out md:hidden ${
-					isOpen
+				className={`fixed inset-0 z-40 h-dvh w-full overflow-hidden bg-card text-foreground shadow-xl transition-[transform,opacity] duration-300 ease-in-out md:hidden ${isOpen
 						? "translate-x-0 opacity-100"
 						: "pointer-events-none translate-x-full opacity-0"
-				}`}
+					}`}
 			>
 				<div className="flex items-center justify-between border-b border-border px-6 py-5">
 					<Link
@@ -339,7 +336,6 @@ const Header = (): JSX.Element => {
 						aria-label="Go to homepage"
 						onClick={() => {
 							setIsOpen(false);
-							window.location.reload();
 						}}
 					>
 						<ProtechpcLogo />
@@ -375,7 +371,7 @@ const Header = (): JSX.Element => {
 											{(section === "products" ? products : services).map((item) => (
 												<a
 													key={item.title}
-													href={`#${section}`}
+													href={`/${section}`}
 													onClick={() => setIsOpen(false)}
 													className="block cursor-pointer py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
 												>
@@ -398,7 +394,7 @@ const Header = (): JSX.Element => {
 								</Link>
 							) : (
 								<a
-									href={`#${section}`}
+									href={`/${section}`}
 									className={`${getLinkClass(section)} block cursor-pointer border-transparent py-4`}
 									onClick={() => setIsOpen(false)}
 								>

@@ -29,7 +29,7 @@ const contactDetails = [
   },
 ];
 
-export default function Contact() {
+export default function page() {
   return (
     <section
       id="contact"
@@ -158,5 +158,5 @@ export default function Contact() {
         </FadeInOnView>
       </div>
     </section>
-  );
+  )
 }

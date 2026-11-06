@@ -34,7 +34,7 @@ const products = [
   },
 ]
 
-export default function Products() {
+export default function page() {
   return (
     <section
       id="products"

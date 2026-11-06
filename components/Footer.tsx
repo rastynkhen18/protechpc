@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 
@@ -74,10 +75,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex  flex-col gap-4 border-t border-border px-6 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 ProTechPC. All rights reserved.</p>
         <div className="hidden md:flex gap-5">
-          <a href="#home" className="flex items-center gap-1 hover:text-foreground">
+          <Link href="/" className="flex items-center gap-1 hover:text-foreground">
             <ArrowUp className="size-4" aria-hidden="true" />
             Back to top
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -8,7 +8,7 @@ const services = [
   "Printers and everyday business equipment",
 ];
 
-export default function About() {
+export default function page() {
   return (
     <section
       id="about"
@@ -53,5 +53,5 @@ export default function About() {
         </FadeInOnView>
       </div>
     </section>
-  );
+  )
 }

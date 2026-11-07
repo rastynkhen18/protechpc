@@ -131,24 +131,6 @@ export default function Home() {
                 include computer repair, preventive maintenance, deep cleaning,
                 troubleshooting, laptop services, and printer services.
               </p>
-              {/* <ul className="mt-7 grid max-w-xl gap-3 text-sm text-foreground sm:grid-cols-2">
-                            {[
-                                "Gaming PC sets",
-                                "Laptops for work and school",
-                                "Printers for home and office",
-                                "Repair and maintenance",
-                            ].map((service) => (
-                                <li key={service} className="flex items-center gap-2">
-                                    <span
-                                        aria-hidden="true"
-                                        className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 text-xs text-primary"
-                                    >
-                                        ✓
-                                    </span>
-                                    {service}
-                                </li>
-                            ))}
-                        </ul> */}
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button
                   size="lg"
@@ -156,9 +138,6 @@ export default function Home() {
                   render={<Link href="/services" />}
                 >
                   Explore our solutions
-                  <span aria-hidden="true">
-                    →
-                  </span>
                 </Button>
                 <Button
                   variant="outline"

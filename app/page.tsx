@@ -152,7 +152,7 @@ export default function Home() {
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button
                   size="lg"
-                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base font-semibold hover:shadow-primary/30 md:text-sm"
+                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base hover:shadow-primary/30 md:text-sm"
                   render={<Link href="/services" />}
                 >
                   Explore our solutions
@@ -163,7 +163,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base font-semibold md:text-sm"
+                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base md:text-sm"
                   render={<Link href="/contact" />}
                 >
                   Contact Us

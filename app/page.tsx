@@ -3,10 +3,85 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import ProtechPcLogo from "@/assets/protechpc.png";
+import {
+  Laptop,
+  MonitorCog,
+  Printer,
+  ShoppingCart,
+  Wrench,
+  Zap,
+} from "lucide-react";
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
+import FadeInOnView from "@/components/FadeInOnView";
 import SlideShow from "@/components/slideShow";
 import { Button } from "@/components/ui/button";
+
+const featuredServices = [
+  {
+    icon: ShoppingCart,
+    title: "Custom PC Builds",
+    description:
+      "A carefully matched setup built around your budget, workload, and performance goals.",
+  },
+  {
+    icon: Wrench,
+    title: "Computer Repair",
+    description:
+      "Reliable diagnosis and repair for hardware, software, and performance issues.",
+  },
+  {
+    icon: Zap,
+    title: "Upgrades & Maintenance",
+    description:
+      "Make your current system faster, cleaner, and ready for what comes next.",
+  },
+  {
+    icon: Laptop,
+    title: "Laptop Services",
+    description:
+      "Setup, troubleshooting, upgrades, and support for laptops at home, school, or work.",
+  },
+  {
+    icon: Printer,
+    title: "Printer Solutions",
+    description:
+      "Get your printer installed, connected, and working smoothly when you need it.",
+  },
+  {
+    icon: MonitorCog,
+    title: "Business IT Support",
+    description:
+      "Practical technology solutions for offices and small businesses that need dependable support.",
+  },
+];
+
+const frequentlyAskedQuestions = [
+  {
+    question: "Can you help me choose the right PC or laptop?",
+    answer:
+      "Yes. Tell us how you plan to use it, your preferred specifications, and your budget. We will recommend options that fit your needs without unnecessary upgrades.",
+  },
+  {
+    question: "Do you offer custom PC builds and upgrades?",
+    answer:
+      "We do. We can build a new system from compatible quality components or upgrade your current PC to improve performance and extend its usable life.",
+  },
+  {
+    question: "What kinds of computer problems do you repair?",
+    answer:
+      "We help with hardware failures, slow performance, software issues, operating system setup, troubleshooting, cleaning, and other common computer problems.",
+  },
+  {
+    question: "Can you set up my new computer or printer?",
+    answer:
+      "Yes. Our setup service can include device installation, software and operating system configuration, printer connection, and basic testing.",
+  },
+  {
+    question: "Do you provide after-sales support?",
+    answer:
+      "Yes. We provide friendly guidance after your purchase and can help with warranty concerns, product questions, maintenance, and future upgrades.",
+  },
+];
 
 
 export default function Home() {
@@ -158,6 +233,102 @@ export default function Home() {
           </div>
         </div>
         <SlideShow />
+      </section>
+
+      <section
+        id="featured"
+        aria-labelledby="featured-title"
+        className="overflow-hidden bg-background py-10"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+          <FadeInOnView>
+            <div className="border-t border-border pt-16 sm:pt-20">
+              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    Featured / What We Do
+                  </p>
+                  <h2
+                    id="featured-title"
+                    className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+                  >
+                    Practical technology support, all in one place.
+                  </h2>
+                </div>
+                <p className="max-w-sm text-sm leading-6 text-muted-foreground">
+                  From choosing the right device to keeping it running at its best, we make technology easier.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {featuredServices.map(({ icon: Icon, title, description }) => (
+                  <article
+                    key={title}
+                    className="group rounded-2xl border border-border bg-muted/30 p-6 transition-colors hover:bg-muted"
+                  >
+                    <div className="flex size-11 items-center justify-center rounded-xl bg-background text-primary shadow-sm">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </div>
+                    <h3 className="mt-6 font-semibold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      {description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </FadeInOnView>
+        </div>
+      </section>
+
+      <section
+        id="faq"
+        aria-labelledby="faq-title"
+        className="overflow-hidden bg-background py-10"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+          <FadeInOnView>
+            <div className="border-t border-border py-16 sm:py-20">
+              <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    FAQ
+                  </p>
+                  <h2
+                    id="faq-title"
+                    className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+                  >
+                    Questions, answered.
+                  </h2>
+                  <p className="mt-4 max-w-md leading-7 text-muted-foreground">
+                    Can&apos;t find what you need? Our team is happy to help you find the right solution.
+                  </p>
+                </div>
+
+                <div className="divide-y divide-border">
+                  {frequentlyAskedQuestions.map(({ question, answer }) => (
+                    <details key={question} className="group py-5 first:pt-0 last:pb-0">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold [&::-webkit-details-marker]:hidden">
+                        {question}
+                        <span
+                          aria-hidden="true"
+                          className="text-2xl font-normal text-muted-foreground transition-transform group-open:rotate-45"
+                        >
+                          +
+                        </span>
+                      </summary>
+                      <p className="max-w-2xl pt-3 text-sm leading-6 text-muted-foreground">
+                        {answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeInOnView>
+
+          
+        </div>
       </section>
     </>
   );

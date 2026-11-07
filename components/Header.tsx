@@ -28,7 +28,7 @@ import {
 	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import facebook from "@/assets/facebook-icon.svg";
-
+import { usePathname } from "next/navigation";
 
 const sections = ["home", "products", "services", "about", "contact", "blog"] as const;
 type Section = (typeof sections)[number];
@@ -115,13 +115,13 @@ const ProtechpcLogo = (): JSX.Element => (
 	<Image src={Protechpc} alt="ProtechPC Logo" className="h-8 w-auto" />
 );
 
-
 const Header = (): JSX.Element => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const [activeSection, setActiveSection] = useState<Section>("home");
 	const [mobileExpandedSection, setMobileExpandedSection] = useState<"products" | "services" | null>(null);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
+	const pathname = usePathname();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -175,10 +175,16 @@ const Header = (): JSX.Element => {
 		};
 	}, [isOpen]);
 
+	const currentSection: Section =
+		pathname === "/" ? "home" : (pathname.slice(1) as Section);
+
+	const isHomePage = pathname === "/";
+
 	const getLinkClass = (section: Section): string =>
-		`pb-1 transition-all duration-300 ${activeSection === section
-			? "border-b-2 border-primary"
-			: "border-b-2 border-transparent"
+		`border-b-2 pb-1 transition-colors duration-150 ${
+			(isHomePage ? activeSection : currentSection) === section
+				? "border-primary"
+				: "border-transparent"
 		}`;
 
 	return (

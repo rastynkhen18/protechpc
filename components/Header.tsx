@@ -30,6 +30,8 @@ import {
 import facebook from "@/assets/facebook-icon.svg";
 import { usePathname } from "next/navigation";
 
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 const sections = ["home", "products", "services", "about", "contact", "blog"] as const;
 type Section = (typeof sections)[number];
 
@@ -196,9 +198,9 @@ const Header = (): JSX.Element => {
 		>
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-4">
 				<div>
-					<Link href="/">
+					<a href="/">
 						<ProtechpcLogo />
-					</Link>
+					</a>
 				</div>
 
 				{/* Desktop Nav */}
@@ -280,11 +282,9 @@ const Header = (): JSX.Element => {
 										aria-current={activeSection === section ? "page" : undefined}
 										render={
 											section === "home" ? (
-												<Link
-													href="/"
-												>
+												<a href="/">
 													{section.charAt(0).toUpperCase() + section.slice(1)}
-												</Link>
+												</a>
 											) : (
 												<Link href={`/${section}`}>
 													{section.charAt(0).toUpperCase() + section.slice(1)}
@@ -337,7 +337,7 @@ const Header = (): JSX.Element => {
 					}`}
 			>
 				<div className="flex items-center justify-between border-b border-border px-6 py-5">
-					<Link
+					<a
 						href="/"
 						aria-label="Go to homepage"
 						onClick={() => {
@@ -345,7 +345,7 @@ const Header = (): JSX.Element => {
 						}}
 					>
 						<ProtechpcLogo />
-					</Link>
+					</a>
 					<button
 						type="button"
 						aria-label="Close menu"
@@ -388,16 +388,13 @@ const Header = (): JSX.Element => {
 									)}
 								</>
 							) : section === "home" ? (
-								<Link
+								<a
 									href="/"
 									className={`${getLinkClass(section)} block cursor-pointer border-transparent py-4`}
-									onClick={() => {
-										setIsOpen(false);
-										window.location.reload();
-									}}
+									onClick={() => setIsOpen(false)}
 								>
 									Home
-								</Link>
+								</a>
 							) : (
 								<a
 									href={`/${section}`}

@@ -183,7 +183,7 @@ const Header = (): JSX.Element => {
 	const isHomePage = pathname === "/";
 
 	const getLinkClass = (section: Section): string =>
-		`relative border-b-2 border-transparent pb-1 after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#00bf62] after:via-[#ff312f] after:to-[#5d17eb] after:content-[''] after:transition-opacity after:duration-150 ${
+		`relative border-b-2 border-transparent pb-1 after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-0.5 after:bg-gradient-to-r after:from-[#00b85c] after:via-[#f22932] after:to-[#1455a3] after:content-[''] after:transition-opacity after:duration-150 ${
 			(isHomePage ? activeSection : currentSection) === section
 				? "after:opacity-100"
 				: "after:opacity-0"

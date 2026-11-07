@@ -76,7 +76,7 @@ export default function page() {
                   key={title}
                   className="group rounded-2xl border border-border bg-muted/30 p-6 transition-colors hover:bg-muted"
                 >
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-background text-foreground shadow-sm">
+                  <div className="flex size-11 items-center justify-center rounded-xl bg-background text-primary shadow-sm">
                     <Icon className="size-5" />
                   </div>
                   <h3 className="mt-6 font-semibold">{title}</h3>

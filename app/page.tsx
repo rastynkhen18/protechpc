@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import ProtechPcLogo from "@/assets/protechpc.png";
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import SlideShow from "@/components/slideShow";
+import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
@@ -148,21 +150,24 @@ export default function Home() {
                             ))}
                         </ul> */}
               <div className="mt-5 flex flex-wrap items-center gap-4">
-                <a
-                  href="/services"
-                  className="rounded-[var(--radius)] bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/80 hover:shadow-primary/30"
+                <Button
+                  size="lg"
+                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base font-semibold hover:shadow-primary/30 md:text-sm"
+                  render={<Link href="/services" />}
                 >
                   Explore our solutions
-                  <span aria-hidden="true" className="ml-2">
+                  <span aria-hidden="true">
                     →
                   </span>
-                </a>
-                <a
-                  href="/contact"
-                  className="border border-border rounded-[var(--radius)] px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-ring hover:text-foreground"
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base font-semibold md:text-sm"
+                  render={<Link href="/contact" />}
                 >
                   Contact Us
-                </a>
+                </Button>
               </div>
 
             </div>

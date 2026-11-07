@@ -287,7 +287,9 @@ const Header = (): JSX.Element => {
 												</a>
 											) : (
 												<Link href={`/${section}`}>
-													{section.charAt(0).toUpperCase() + section.slice(1)}
+													{section === "about"
+														? "About Us"
+														: section.charAt(0).toUpperCase() + section.slice(1)}
 												</Link>
 											)
 										}
@@ -401,7 +403,9 @@ const Header = (): JSX.Element => {
 									className={`${getLinkClass(section)} block cursor-pointer border-transparent py-4`}
 									onClick={() => setIsOpen(false)}
 								>
-									{section.charAt(0).toUpperCase() + section.slice(1)}
+									{section === "about"
+										? "About Us"
+										: section.charAt(0).toUpperCase() + section.slice(1)}
 								</a>
 							)}
 						</div>

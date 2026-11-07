@@ -209,7 +209,7 @@ const Header = (): JSX.Element => {
 								{section === "products" ? (
 									<>
 										<NavigationMenuTrigger
-											className={`${getLinkClass(section)} cursor-pointer rounded-none px-0 hover:bg-transparent focus:bg-transparent`}
+											className={`${getLinkClass(section)} cursor-pointer rounded-none !h-auto !p-0 hover:bg-transparent focus:bg-transparent`}
 											aria-current={activeSection === section ? "page" : undefined}
 										>
 											Products
@@ -243,7 +243,7 @@ const Header = (): JSX.Element => {
 								) : section === "services" ? (
 									<>
 										<NavigationMenuTrigger
-											className={`${getLinkClass(section)} cursor-pointer rounded-none px-0 hover:bg-transparent focus:bg-transparent`}
+											className={`${getLinkClass(section)} cursor-pointer rounded-none !h-auto !p-0 hover:bg-transparent focus:bg-transparent`}
 											aria-current={activeSection === section ? "page" : undefined}
 										>
 											Services

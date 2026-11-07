@@ -209,10 +209,10 @@ const Header = (): JSX.Element => {
 								{section === "products" ? (
 									<>
 										<NavigationMenuTrigger
-											className={`${getLinkClass(section)} cursor-pointer rounded-none !h-auto !p-0 hover:bg-transparent focus:bg-transparent`}
+											className="cursor-pointer rounded-none !h-auto !p-0 [&>svg]:!top-0 hover:bg-transparent focus:bg-transparent"
 											aria-current={activeSection === section ? "page" : undefined}
 										>
-											Products
+											<span className={`${getLinkClass(section)} !pb-0`}>Products</span>
 										</NavigationMenuTrigger>
 										<NavigationMenuContent>
 											<ul className="grid w-[min(90vw,640px)] grid-cols-2 gap-1 p-2">
@@ -243,10 +243,10 @@ const Header = (): JSX.Element => {
 								) : section === "services" ? (
 									<>
 										<NavigationMenuTrigger
-											className={`${getLinkClass(section)} cursor-pointer rounded-none !h-auto !p-0 hover:bg-transparent focus:bg-transparent`}
+											className="cursor-pointer rounded-none !h-auto !p-0 [&>svg]:!top-0 hover:bg-transparent focus:bg-transparent"
 											aria-current={activeSection === section ? "page" : undefined}
 										>
-											Services
+											<span className={`${getLinkClass(section)} !pb-0`}>Services</span>
 										</NavigationMenuTrigger>
 										<NavigationMenuContent>
 											<ul className="grid w-[min(90vw,640px)] grid-cols-2 gap-1 p-2">

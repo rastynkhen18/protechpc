@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUp } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
 
 export default function Footer() {
@@ -21,8 +19,8 @@ export default function Footer() {
             alt="ProtechPC Logo"
             className="h-12 w-auto"
           />
-          <p className="text-sm leading-6 text-muted-foreground">
-            Build Your Dream PC with Us Now. Your trusted source for PC products and IT solutions.
+          <p className="text-sm leading-5 text-muted-foreground">
+            Build Your Dream PC with Us Now. Your Trusted IT Partner for PC products and IT solutions.
           </p>
         </div>
 
@@ -72,14 +70,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex  flex-col gap-4 border-t border-border px-6 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 border-t border-border px-6 py-6 text-center text-sm text-muted-foreground">
         <p>© 2026 ProTechPC. All rights reserved.</p>
-        <div className="hidden md:flex gap-5">
-          <Link href="/" className="flex items-center gap-1 hover:text-foreground">
-            <ArrowUp className="size-4" aria-hidden="true" />
-            Back to top
-          </Link>
-        </div>
       </div>
     </footer>
   );

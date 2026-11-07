@@ -14,6 +14,12 @@ import {
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import FadeInOnView from "@/components/FadeInOnView";
 import SlideShow from "@/components/slideShow";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
 const featuredServices = [
@@ -305,24 +311,24 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="divide-y divide-border">
-                  {frequentlyAskedQuestions.map(({ question, answer }) => (
-                    <details key={question} className="group py-5 first:pt-0 last:pb-0">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold [&::-webkit-details-marker]:hidden">
+                <Accordion>
+                  {frequentlyAskedQuestions.map(({ question, answer }, index) => (
+                    <AccordionItem
+                      key={question}
+                      value={`question-${index}`}
+                      className="py-5 first:pt-0 last:pb-0"
+                    >
+                      <AccordionTrigger className="py-0 font-semibold hover:no-underline">
                         {question}
-                        <span
-                          aria-hidden="true"
-                          className="text-2xl font-normal text-muted-foreground transition-transform group-open:rotate-45"
-                        >
-                          +
-                        </span>
-                      </summary>
-                      <p className="max-w-2xl pt-3 text-sm leading-6 text-muted-foreground">
-                        {answer}
-                      </p>
-                    </details>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <p className="max-w-2xl pt-3 leading-6 text-muted-foreground">
+                          {answer}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
+                </Accordion>
               </div>
             </div>
           </FadeInOnView>

@@ -8,6 +8,7 @@ import {
   MonitorCog,
   Printer,
   ShoppingCart,
+  CheckCircle2,
   Wrench,
   Zap,
 } from "lucide-react";
@@ -87,6 +88,22 @@ const frequentlyAskedQuestions = [
     answer:
       "Yes. We provide friendly guidance after your purchase and can help with warranty concerns, product questions, maintenance, and future upgrades.",
   },
+];
+
+const process = [
+  ["1", "Consult", "Understand your needs, budget, and use case"],
+  ["2", "Recommend", "Suggest the right products and configuration"],
+  ["3", "Deliver & Set Up", "Prepare, install, and test your equipment"],
+  ["4", "Support", "Provide after-sales help and maintenance"],
+];
+
+const benefits = [
+  "Complete range — PC sets, gaming PCs, laptops, peripherals, printers, and parts under one roof",
+  "Quality, genuine products from trusted brands at competitive prices",
+  "Knowledgeable team that recommends what fits your needs and budget, not just what is in stock",
+  "Custom builds and upgrades tailored to your performance goals",
+  "In-house setup, repair, and maintenance services for complete peace of mind",
+  "Friendly, responsive after-sales support you can count on",
 ];
 
 
@@ -281,6 +298,77 @@ export default function Home() {
                     </p>
                   </article>
                 ))}
+              </div>
+            </div>
+          </FadeInOnView>
+        </div>
+      </section>
+
+      <section
+        id="service-details"
+        aria-label="How we work and why choose us"
+        className="overflow-hidden bg-background py-10"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+          <FadeInOnView>
+            <div className="grid gap-12 border-t border-border py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Simple, dependable care.
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+                  How We Work
+                </h2>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {process.map(([number, title, description]) => (
+                  <div key={number} className="flex gap-4">
+                    <span className="text-sm font-semibold text-muted-foreground">
+                      {number}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold">{title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInOnView>
+
+          <FadeInOnView>
+            <div className="border-t border-border py-16 sm:py-20">
+              <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    Why Choose Us
+                  </p>
+                  <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                    Technology support with fewer surprises.
+                  </h2>
+                  <p className="mt-4 max-w-md leading-7 text-muted-foreground">
+                    Friendly, responsive after-sales support you can count on.
+                  </p>
+                </div>
+
+                <div className="grid divide-y divide-border">
+                  {benefits.map((benefit, index) => (
+                    <div
+                      key={benefit}
+                      className="flex items-start gap-4 py-5 first:pt-0 last:pb-0"
+                    >
+                      <span className="mt-0.5 text-sm font-semibold text-muted-foreground">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex gap-3">
+                        <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-500" />
+                        <p className="leading-7">{benefit}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeInOnView>

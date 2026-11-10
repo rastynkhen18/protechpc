@@ -4,7 +4,7 @@ import {
   Printer,
   ShoppingCart,
 } from "lucide-react";
-import FadeInOnView from '@/components/FadeInOnView'
+
 
 const services = [
   {
@@ -53,8 +53,6 @@ export default function page() {
       className="overflow-hidden bg-background py-10"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-
-        <FadeInOnView>
           <div className="border-t border-border pt-16 sm:pt-20">
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
@@ -88,7 +86,6 @@ export default function page() {
             </div>
 
           </div>
-        </FadeInOnView>
       </div>
     </section>
   )

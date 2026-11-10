@@ -264,7 +264,6 @@ export default function Home() {
         className="overflow-hidden bg-background py-10"
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
-          <FadeInOnView>
             <div className="border-t border-border pt-16 sm:pt-20">
               <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div>
@@ -300,7 +299,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </FadeInOnView>
         </div>
       </section>
 

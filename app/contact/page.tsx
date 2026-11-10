@@ -1,6 +1,5 @@
 import React from 'react'
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
-import FadeInOnView from "@/components/FadeInOnView";
 import { Button } from "@/components/ui/button";
 
 const contactDetails = [
@@ -38,7 +37,6 @@ export default function page() {
       className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
     >
       <div className="grid gap-12 border-t border-border pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
-        <FadeInOnView>
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Let&apos;s work together
@@ -80,9 +78,8 @@ export default function page() {
               ))}
             </div>
           </div>
-        </FadeInOnView>
 
-        <FadeInOnView>
+
           <div className="mt-8">
             <form
               action="mailto:protechpcstore@gmail.com"
@@ -156,7 +153,6 @@ export default function page() {
               </Button>
             </form>
           </div>
-        </FadeInOnView>
       </div>
     </section>
   )

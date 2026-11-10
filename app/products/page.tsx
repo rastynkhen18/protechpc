@@ -1,5 +1,4 @@
 import React from 'react'
-import FadeInOnView from '@/components/FadeInOnView'
 import { Cpu, Gamepad2, Keyboard, Laptop, Monitor, Printer } from 'lucide-react'
 
 const products = [
@@ -50,8 +49,6 @@ export default function page() {
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
         <div className="border-t border-border pt-16 sm:pt-20">
-
-          <FadeInOnView>
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -69,9 +66,8 @@ export default function page() {
                 A complete range of IT products to match every need and budget.
               </p>
             </div>
-          </FadeInOnView>
 
-          <FadeInOnView>
+
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {products.map(({ icon: Icon, title, description }) => (
                 <article
@@ -88,8 +84,6 @@ export default function page() {
                 </article>
               ))}
             </div>
-          </FadeInOnView>
-
         </div>
       </div>
     </section>

@@ -1,4 +1,7 @@
+﻿"use client";
+
 import React from 'react'
+import { useState } from "react";
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,18 +32,28 @@ const contactDetails = [
   },
 ];
 
-export default function page() {
+const subjectOptions = [
+  "Product inquiry",
+  "Custom PC build or upgrade",
+  "Computer repair",
+  "Printer repair",
+  "IT support",
+  "Preventive maintenance",
+  "Networking support",
+  "Other",
+];
+
+export default function ContactPage() {
+  const [subject, setSubject] = useState("");
+
   return (
     <section
       id="contact"
       aria-labelledby="contact-title"
       className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
     >
-      <div className="grid gap-12 border-t border-border pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
+      <div className="grid gap-12 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Let&apos;s work together
-            </p>
             <h2
               id="contact-title"
               className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
@@ -122,14 +135,40 @@ export default function page() {
                   <label htmlFor="contact-subject" className="text-sm font-medium">
                     Subject
                   </label>
-                  <input
+                  <select
                     id="contact-subject"
                     name="subject"
-                    type="text"
                     required
                     className="h-11 w-full rounded-[var(--radius)] border border-input bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/20"
-                  />
+                    value={subject}
+                    onChange={(event) => setSubject(event.target.value)}
+                  >
+                    <option value="">
+                      
+                    </option>
+                    {subjectOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
                 </div>
+
+                {subject === "Other" && (
+                  <div className="space-y-2">
+                    <label htmlFor="contact-subject-other" className="text-sm font-medium">
+                      Please specify
+                    </label>
+                    <input
+                      id="contact-subject-other"
+                      name="subjectDetails"
+                      type="text"
+                      required
+                      autoComplete="off"
+                      className="h-11 w-full rounded-[var(--radius)] border border-input bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/20"
+                    />
+                  </div>
+                )}
 
                 <div className="space-y-2">
                   <label htmlFor="contact-message" className="text-sm font-medium">

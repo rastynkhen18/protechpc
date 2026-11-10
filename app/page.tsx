@@ -261,10 +261,9 @@ export default function Home() {
       <section
         id="featured"
         aria-labelledby="featured-title"
-        className="overflow-hidden bg-background py-10"
+        className="overflow-hidden bg-background py-12"
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
-            <div className="border-t border-border pt-16 sm:pt-20">
               <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -298,7 +297,6 @@ export default function Home() {
                   </article>
                 ))}
               </div>
-            </div>
         </div>
       </section>
 

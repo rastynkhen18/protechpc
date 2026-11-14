@@ -7,14 +7,12 @@ import Image from "next/image";
 import {
 	Cpu,
 	ChevronDown,
-	Gamepad2,
 	Keyboard,
 	Laptop,
 	Menu,
 	Monitor,
 	MonitorCog,
 	Printer,
-	ShoppingCart,
 	X,
 } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
@@ -37,79 +35,85 @@ type Section = (typeof sections)[number];
 
 const products = [
 	{
-		title: "PC Sets",
+		title: "Computer Sets & Packages",
 		icon: Monitor,
 		description:
-			"Complete desktop packages for home, school, and office use, ready to plug in and perform from day one.",
-	},
-	{
-		title: "Gaming PCs",
-		icon: Gamepad2,
-		description:
-			"High-performance gaming rigs built for smooth gameplay, fast load times, and room to upgrade.",
+			"Complete desktop computer sets and customized packages for home, school, office, and business use, available in a range of specifications and budgets.",
 	},
 	{
 		title: "Laptops",
 		icon: Laptop,
 		description:
-			"A wide range of laptops for students, professionals, and creators, from everyday models to performance machines.",
-	},
-	{
-		title: "Peripherals",
-		icon: Keyboard,
-		description:
-			"Monitors, keyboards, mice, headsets, webcams, speakers, and other accessories to complete any setup.",
+			"A selection of laptops for students, professionals, business users, and everyday computing needs.",
 	},
 	{
 		title: "Printers",
 		icon: Printer,
 		description:
-			"Reliable printing, scanning, and copying solutions for home, small business, and office needs.",
+			"Inkjet, ink tank, laser, and multifunction printers suited for home offices, schools, and business operations, along with compatible supplies.",
+	},
+	{
+		title: "Peripherals & Accessories",
+		icon: Keyboard,
+		description:
+			"Monitors, keyboards, mice, webcams, headsets, speakers, UPS and power protection, networking devices, external storage, cables, and other accessories.",
 	},
 	{
 		title: "Computer Parts",
 		icon: Cpu,
 		description:
-			"Processors, graphics cards, memory, storage, motherboards, power supplies, and cooling for builds and upgrades.",
+			"Processors, motherboards, memory (RAM), storage drives (SSD and HDD), graphics cards, power supplies, cases, and cooling components for new builds and upgrades.",
+	},
+	{
+		title: "Laptop Parts",
+		icon: Cpu,
+		description:
+			"Replacement batteries, chargers and adapters, screens, keyboards, storage, memory, and other laptop components.",
 	},
 ] as const;
 
 const services = [
 	{
-		icon: ShoppingCart,
-		title: "Custom PC Build & Upgrade",
+		icon: MonitorCog,
+		title: "IT Support",
 		description:
-			"Systems built and upgraded to your budget and performance goals, with compatible, quality components.",
-	},
-	{
-		icon: Laptop,
-		title: "Installation & Setup",
-		description:
-			"Hands-on setup of computers, printers, and peripherals, including operating system and software installation.",
+			"On-site and remote technical assistance for hardware, software, and network concerns, helping clients resolve issues quickly and get back to work.",
 	},
 	{
 		icon: MonitorCog,
-		title: "Repair & Troubleshooting",
+		title: "Preventive Maintenance",
 		description:
-			"Diagnosis and repair of hardware and software problems to get you back up and running quickly.",
+			"Scheduled inspection, cleaning, updates, performance checks, and system health monitoring to extend equipment life and minimize unexpected downtime.",
+	},
+	{
+		icon: MonitorCog,
+		title: "Computer & Laptop Repair",
+		description:
+			"Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops and laptops.",
+	},
+	{
+		icon: Cpu,
+		title: "Upgrades & Optimization",
+		description:
+			"RAM, SSD, and component upgrades, plus operating system and software optimization to improve speed and performance.",
 	},
 	{
 		icon: Printer,
-		title: "Preventive Maintenance",
+		title: "Installation & Setup",
 		description:
-			"Cleaning, tune-ups, and system checks that extend equipment life and prevent costly breakdowns.",
+			"Setup of new computers, printers, peripherals, operating systems, and software, including configuration and user orientation.",
+	},
+	{
+		icon: Monitor,
+		title: "Networking Support",
+		description:
+			"Basic network setup, Wi-Fi configuration, and troubleshooting for homes and offices.",
 	},
 	{
 		icon: MonitorCog,
-		title: "Office & Business Solutions",
+		title: "Software & Security Support",
 		description:
-			"Bulk equipment supply and workstation setups tailored to the needs of offices and small businesses.",
-	},
-	{
-		icon: ShoppingCart,
-		title: "After-Sales Support",
-		description:
-			"Friendly, responsive support and guidance on warranty and product concerns after your purchase.",
+			"Operating system installation, software setup, antivirus protection, data backup, and virus and malware removal.",
 	},
 ] as const;
 

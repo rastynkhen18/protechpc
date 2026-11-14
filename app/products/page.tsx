@@ -1,44 +1,47 @@
 import React from 'react'
-import { Cpu, Gamepad2, Keyboard, Laptop, Monitor, Printer } from 'lucide-react'
+import Image from 'next/image'
 
 const products = [
   {
-    icon: Monitor,
-    title: "PC Sets",
+    image: "photo-1593640408182-31c70c8268f5",
+    title: "Computer Sets & Packages",
     description:
-      "Complete desktop packages for home, school, and office use, ready to plug in and perform from day one.",
+      "Complete desktop computer sets and customized packages for home, school, office, and business use, available in a range of specifications and budgets.",
   },
   {
-    icon: Gamepad2,
-    title: "Gaming PCs",
-    description:
-      "High-performance gaming rigs built for smooth gameplay, fast load times, and room to upgrade.",
-  },
-  {
-    icon: Laptop,
+    image: "photo-1496181133206-80ce9b88a853",
     title: "Laptops",
     description:
-      "A wide range of laptops for students, professionals, and creators, from everyday models to performance machines.",
+      "A selection of laptops for students, professionals, business users, and everyday computing needs.",
   },
   {
-    icon: Keyboard,
-    title: "Peripherals",
-    description:
-      "Monitors, keyboards, mice, headsets, webcams, speakers, and other accessories to complete any setup.",
-  },
-  {
-    icon: Printer,
+    image: "photo-1612815154858-60aa4c59eaa6",
     title: "Printers",
     description:
-      "Reliable printing, scanning, and copying solutions for home, small business, and office needs.",
+      "Inkjet, ink tank, laser, and multifunction printers suited for home offices, schools, and business operations, along with compatible supplies.",
   },
   {
-    icon: Cpu,
+    image: "photo-1587829741301-dc798b83add3",
+    title: "Peripherals & Accessories",
+    description:
+      "Monitors, keyboards, mice, webcams, headsets, speakers, UPS and power protection, networking devices, external storage, cables, and other accessories.",
+  },
+  {
+    image: "photo-1587202372775-e229f172b9d7",
     title: "Computer Parts",
     description:
-      "Processors, graphics cards, memory, storage, motherboards, power supplies, and cooling for builds and upgrades.",
+      "Processors, motherboards, memory (RAM), storage drives (SSD and HDD), graphics cards, power supplies, cases, and cooling components for new builds and upgrades.",
+  },
+  {
+    image: "photo-1555617981-dac3880eac6e",
+    title: "Laptop Parts",
+    description:
+      "Replacement batteries, chargers and adapters, screens, keyboards, storage, memory, and other laptop components.",
   },
 ]
+
+const imageUrl = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`
 
 export default function page() {
   return (
@@ -69,15 +72,19 @@ export default function page() {
 
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map(({ icon: Icon, title, description }) => (
+              {products.map(({ image, title, description }) => (
                 <article
                   key={title}
                   className="rounded-2xl border border-border bg-muted/30 p-6 transition-colors hover:bg-muted"
                 >
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-background text-primary shadow-sm">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </div>
-                  <h3 className="font-semibold">{title}</h3>
+                  <Image
+                    src={imageUrl(image)}
+                    alt={title}
+                    width={900}
+                    height={520}
+                    className="h-40 w-full rounded-xl object-cover"
+                  />
+                  <h3 className="mt-5 font-semibold">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
                     {description}
                   </p>

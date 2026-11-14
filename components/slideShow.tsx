@@ -1,18 +1,23 @@
 import Image from "next/image";
-import Ryzen from "@/assets/ryzen.png";
-import Intel from "@/assets/intel.png";
-import Msi from "@/assets/msi.png";
+import Amd from "@/assets/logoBrand/amd.svg";
+import Intel from "@/assets/logoBrand/intel.png";
+import Nvidia from "@/assets/logoBrand/nvidia.png";
+import Redragon from "@/assets/logoBrand/redragon.png";
+import Msi from "@/assets/logoBrand/msi.png";
+import Gigabyte from "@/assets/logoBrand/gigabyte.png";
 
 type TechStackItem = {
-  label: string;
   alt: string;
-  image: typeof Ryzen;
+  image: typeof Amd | typeof Intel | typeof Nvidia | typeof Redragon | typeof Msi | typeof Gigabyte;
 };
 
 const techStack: TechStackItem[] = [
-  { label: "AMD Ryzen", alt: "AMD Ryzen logo", image: Ryzen },
-  { label: "Intel", alt: "Intel logo", image: Intel },
-  { label: "MSI", alt: "MSI logo", image: Msi },
+  { alt: "AMD logo", image: Amd },
+  { alt: "Intel logo", image: Intel },
+  { alt: "Nvidia logo", image: Nvidia },
+  { alt: "Redragon logo", image: Redragon },
+  { alt: "MSI logo", image: Msi },
+  { alt: "Gigabyte logo", image: Gigabyte },
 ];
 
 export default function TechStackSlideshow() {
@@ -34,7 +39,6 @@ export default function TechStackSlideshow() {
         <div className="flex w-max animate-[scroll_60s_linear_infinite] will-change-transform md:animate-[scroll_50s_linear_infinite]">
           {repeatedTechStack.map((item, index) => (
             <div
-              key={`${item.label}-${index}`}
               className="group flex shrink-0 items-center gap-2 pr-12 transition-all duration-300 md:pr-20"
               aria-hidden={index >= techStack.length}
             >
@@ -45,9 +49,6 @@ export default function TechStackSlideshow() {
                 height={30}
                 className="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
               />
-              <span className="whitespace-nowrap text-lg font-medium text-muted-foreground">
-                {item.label}
-              </span>
             </div>
           ))}
         </div>

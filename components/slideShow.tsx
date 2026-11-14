@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Amd from "@/assets/logoBrand/amd.svg";
+import Amd from "@/assets/logoBrand/amd.png";
 import Intel from "@/assets/logoBrand/intel.png";
 import Nvidia from "@/assets/logoBrand/nvidia.png";
 import Redragon from "@/assets/logoBrand/redragon.png";

@@ -220,7 +220,10 @@ export default function Home() {
                 id="hero-title"
                 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl"
               >
-                Build Your Dream PC With Us Now.
+                Build Your Dream{" "}
+                <span className="bg-gradient-to-r from-accent via-destructive to-primary bg-clip-text text-transparent">
+                  PC With Us Now.
+                </span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
                ProtechPC provides reliable PC products and professional IT solutions for home, business, school, and gaming needs, including PC upgrades, gaming builds, repairs, maintenance, cleaning, troubleshooting, laptop services, and printer support.

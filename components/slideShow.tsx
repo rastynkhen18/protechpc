@@ -45,9 +45,7 @@ export default function TechStackSlideshow() {
               <Image
                 src={item.image}
                 alt={item.alt}
-                width={30}
-                height={30}
-                className="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
+                className="h-10 w-auto object-containtransition-transform group-hover:scale-110"
               />
             </div>
           ))}

@@ -13,6 +13,7 @@ export function ModeToggle() {
     <Button
       variant="ghost"
       size="icon"
+      className="cursor-pointer"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Sun className="h-[1.2rem] w-[1.2rem] text-[#666666] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

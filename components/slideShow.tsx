@@ -16,57 +16,42 @@ const techStack: TechStackItem[] = [
 ];
 
 export default function TechStackSlideshow() {
-  const repeatedTechStack = [...techStack, ...techStack, ...techStack];
+  const repeatedTechStack = [...techStack, ...techStack];
 
   return (
-    <section className="relative z-10 bg-background">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <style>{`
-            .slideshow-viewport {
-              width: 100%;
-              overflow: hidden;
-            }
-            .slideshow-track {
-              display: flex;
-              width: max-content;
-              animation: scroll-left 20s linear infinite;
-            }
-            @keyframes scroll-left {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-33.33%); }
-            }
-            // .tech-icon {
-            //   filter: brightness(0) saturate(100%);
-            // }
-            // :root.dark .tech-icon {
-            //   filter: brightness(0) saturate(100%) invert(1);
-            // }
-          `}</style>
-          <div className="relative w-full">
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-10" />
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10" />
+    <section className="relative overflow-x-hidden bg-background py-8">
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
+        }
+      `}</style>
 
-            <div className="slideshow-viewport">
-              <div className="slideshow-track">
-                {repeatedTechStack.map((item, index) => (
-                  <div
-                    key={`${item.label}-${index}`}
-                    className="flex shrink-0 cursor-pointer flex-col items-center gap-2 px-6 font-semibold text-muted-foreground transition-colors md:flex-row"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      width={108}
-                      height={108}
-                      className="tech-icon"
-                    />
-                    
-                  </div>
-                ))}
-              </div>
+      <div className="relative mx-auto max-w-7xl overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-32 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-32 bg-gradient-to-l from-background via-background/80 to-transparent" />
+
+        <div className="flex w-max animate-[scroll_60s_linear_infinite] will-change-transform md:animate-[scroll_50s_linear_infinite]">
+          {repeatedTechStack.map((item, index) => (
+            <div
+              key={`${item.label}-${index}`}
+              className="group flex shrink-0 items-center gap-2 pr-12 transition-all duration-300 md:pr-20"
+              aria-hidden={index >= techStack.length}
+            >
+              <Image
+                src={item.image}
+                alt={item.alt}
+                width={30}
+                height={30}
+                className="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
+              />
+              <span className="whitespace-nowrap text-lg font-medium text-muted-foreground">
+                {item.label}
+              </span>
             </div>
-          </div>
+          ))}
         </div>
+      </div>
     </section>
   );
 }

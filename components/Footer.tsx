@@ -20,7 +20,7 @@ export default function Footer() {
             className="h-12 w-auto"
           />
           <p className="text-sm leading-5 text-muted-foreground">
-            Build Your Dream PC with Us Now. Your Trusted Partner for IT Products & Solutions
+            Build Your Dream PC with Us Now. Your Trusted Partner in IT Products, Support & Preventive Maintenance.
           </p>
         </div>
 

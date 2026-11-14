@@ -318,9 +318,9 @@ const Header = (): JSX.Element => {
 				</div>
 				<div className="hidden md:flex items-center">
 					<ModeToggle />
-					<div className="mx-2 h-6 border-l border-border" aria-hidden="true" />
+					{/* <div className="mx-2 h-6 border-l border-border" aria-hidden="true" /> */}
 					<Link href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
-						<Image src={facebook} alt="Facebook" className="mx-2 h-5 w-5" />
+						<Image src={facebook} alt="Facebook" className="mx-2 h-[1.2rem] w-[1.2rem]" />
 					</Link>
 
 				</div>

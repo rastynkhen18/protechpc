@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Protechpc from "@/assets/protechpc.png";
+import { Link } from "lucide-react";
+import facebook from "@/assets/facebook-icon.svg";
 
 export default function Footer() {
   return (
@@ -57,13 +59,8 @@ export default function Footer() {
             >
               protechpcstore@gmail.com
             </a>
-            <a
-              href="https://www.facebook.com/ProTechPcStore"
-              target="_blank"
-              rel="noreferrer"
-              className="block hover:text-foreground"
-            >
-              Facebook
+            <a href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
+              <Image src={facebook} alt="Facebook" className="h-[1.2rem] w-[1.2rem]" />
             </a>
             {/* <p>2nd Floor LB Pagala Bldg., Brgy. Muzon Proper,, San Jose del Monte, Philippines, 3023</p> */}
           </div>

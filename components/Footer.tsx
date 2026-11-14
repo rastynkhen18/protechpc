@@ -49,20 +49,20 @@ export default function Footer() {
         <div>
           <h3 className="mb-4 font-semibold">Contact Us</h3>
           <div className="space-y-3 text-sm text-muted-foreground">
-
-            <a href="tel:+639XXXXXXXXX" className="block hover:text-foreground">
-              0967 082 1565
-            </a>
+            {/* <p>2nd Floor LB Pagala Bldg., Brgy. Muzon Proper,, San Jose del Monte, Philippines, 3023</p> */}
             <a
               href="mailto:protechpc@example.com"
               className="block hover:text-foreground"
             >
               protechpcstore@gmail.com
             </a>
+            <a href="tel:+639XXXXXXXXX" className="block hover:text-foreground">
+              0967 082 1565
+            </a>
+            
             <a href="https://www.facebook.com/ProTechPcStore" target="_blank" rel="noopener noreferrer" aria-label="Visit ProtechPC on Facebook">
               <Image src={facebook} alt="Facebook" className="h-[1.2rem] w-[1.2rem]" />
             </a>
-            {/* <p>2nd Floor LB Pagala Bldg., Brgy. Muzon Proper,, San Jose del Monte, Philippines, 3023</p> */}
           </div>
         </div>
       </div>

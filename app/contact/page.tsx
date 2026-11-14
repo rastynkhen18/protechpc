@@ -8,25 +8,25 @@ import { Button } from "@/components/ui/button";
 const contactDetails = [
   {
     icon: MapPin,
-    label: "Visit us",
+    label: "Location",
     value: "2nd Floor LB Pagala Bldg., Brgy. Muzon Proper, San Jose del Monte, Philippines, 3023",
-    href: "https://goo.gl/maps/1g5k6Z7x8yQ2",
+    href: "https://maps.app.goo.gl/5wqbs7a6ufGHwkKF6",
   },
   {
     icon: Phone,
-    label: "Call us",
+    label: "Phone",
     value: "0967 082 1565",
     href: "tel:+639670821565",
   },
   {
     icon: Mail,
-    label: "Email us",
+    label: "Email",
     value: "protechpcstore@gmail.com",
     href: "mailto:protechpcstore@gmail.com",
   },
   {
     icon: ExternalLink,
-    label: "Message us",
+    label: "Social Media",
     value: "Facebook",
     href: "https://www.facebook.com/ProTechPcStore",
   },
@@ -70,20 +70,21 @@ export default function ContactPage() {
             <div>
               {contactDetails.map(({ icon: Icon, label, value, href }) => (
                 <a
-                  key={label}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-muted/60"
+                  className="group flex items-center gap-4 rounded-xl p-3 transition-colors"
                 >
                   <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-foreground">
                     <Icon className="size-5" />
                   </div>
+                  
+                  
                   <span className="min-w-0">
-                    <span className="block text-sm leading-5 text-muted-foreground">
+                    <span className="block text-sm text-muted-foreground">
                       {label}
                     </span>
-                    <span className="mt-2 block break-words font-semibold leading-5 group-hover:text-primary group-hover:underline">
+                    <span className="block wrap-break-word font-semibold leading-5 group-hover:text-primary group-hover:underline">
                       {value}
                     </span>
                   </span>

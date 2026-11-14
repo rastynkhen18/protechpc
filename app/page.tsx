@@ -232,9 +232,9 @@ export default function Home() {
                 <Button
                   size="lg"
                   className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base hover:shadow-primary/30 md:text-sm"
-                  render={<Link href="/services" />}
+                  render={<Link href="/products" />}
                 >
-                  Explore our solutions
+                  Explore our products
                 </Button>
                 <Button
                   variant="outline"
@@ -421,7 +421,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-12">
         <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-primary px-7 py-9 text-primary-foreground sm:flex-row sm:items-center sm:px-10">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#9bf1c4]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
               Need a hand?
             </p>
             <h2 className="mt-2 text-2xl font-semibold">Let&apos;s build your next setup.</h2>

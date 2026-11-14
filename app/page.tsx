@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Wrench,
   Zap,
+  ArrowUpRight,
 } from "lucide-react";
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import FadeInOnView from "@/components/FadeInOnView";
@@ -217,17 +218,12 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl">
               <h1
                 id="hero-title"
-                className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-5xl"
+                className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl"
               >
                 Build Your Dream PC With Us Now.
               </h1>
-              <p className="mt-5 max-w-xl text-md leading-8 text-muted-foreground">
-                Your trusted source for PC products and IT solutions. Quality, reliable, and professional computer solutions for your
-                home, business, school, and gaming needs. Whether you are
-                upgrading your setup, building your first gaming PC, or need
-                reliable IT support, ProtechPC is here to help. Our services
-                include computer repair, preventive maintenance, deep cleaning,
-                troubleshooting, laptop services, and printer services.
+              <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+               ProtechPC provides reliable PC products and professional IT solutions for home, business, school, and gaming needs, including PC upgrades, gaming builds, repairs, maintenance, cleaning, troubleshooting, laptop services, and printer support.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button
@@ -416,8 +412,24 @@ export default function Home() {
               </div>
             </div>
           </FadeInOnView>
+        </div>
+      </section>
 
-          
+      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-12">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-primary px-7 py-9 text-primary-foreground sm:flex-row sm:items-center sm:px-10">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#9bf1c4]">
+              Need a hand?
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold">Let&apos;s build your next setup.</h2>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary transition-transform hover:-translate-y-0.5"
+          >
+            Talk to our team
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
     </>

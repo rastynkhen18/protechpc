@@ -13,17 +13,18 @@ import {
   Zap,
   ArrowUpRight,
 } from "lucide-react";
-import ProtechPcHeroLogo from "@/assets/protechpchero.png";
-import FadeInOnView from "@/components/FadeInOnView";
-import SlideShow from "@/components/partnersMarquee";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FadeInOnView from "@/components/FadeInOnView";
 import { Button } from "@/components/ui/button";
+import PartnersMarquee from "@/components/partnersMarquee";
+import ClientsMarquee from "@/components/clientsMarquee";
 import CallToAction from "@/components/cta";
+
 
 const featuredServices = [
   {
@@ -259,7 +260,7 @@ export default function Home() {
             /> */}
           </div>
         </div>
-        <SlideShow />
+        <PartnersMarquee />
       </section>
 
       <section
@@ -343,6 +344,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <ClientsMarquee />
           </FadeInOnView>
 
           <FadeInOnView>

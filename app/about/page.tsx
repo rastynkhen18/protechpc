@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"; 
+import Image from "next/image";
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import {
   CheckCircle2,
@@ -10,6 +10,8 @@ import {
   Target,
   Wrench,
 } from "lucide-react";
+import CallToAction from "@/components/cta";
+
 
 const coreValues = [
   ["Proactivity", "We anticipate issues and act early, so our clients avoid costly downtime."],
@@ -61,8 +63,8 @@ const objectives = [
 
 export default function AboutPage() {
   return (
-    <main id="about" className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-28">
-      <section aria-labelledby="about-us-title" className="mt-20 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <>
+      <section aria-labelledby="about-us-title" className="mx-auto mt-20 grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:px-12 lg:py-28">
         <div className="space-y-5 text-muted-foreground">
           <div className="space-y-4">
             <h2 id="about-us-title" className="text-5xl font-bold text-foreground">Our Story</h2>
@@ -111,6 +113,41 @@ export default function AboutPage() {
           </article>
         </div>
       </section>
+
+      <div className="mx-auto mt-24 max-w-7xl px-6 sm:px-10 lg:px-12">
+        <section aria-labelledby="products-title" className="mt-24 grid gap-12 lg:grid-cols-2">
+          <div>
+            <div className="mb-8">
+              <Laptop className="size-8 text-primary" />
+              <h2 id="products-title" className="mt-4 text-3xl font-bold">Products</h2>
+            </div>
+            <div className="space-y-4">
+              {products.map(([title, description]) => (
+                <article key={title} className="border-b border-border pb-4">
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-8">
+              <Wrench className="size-8 text-accent" />
+              <h2 id="services-title" className="mt-4 text-3xl font-bold">Services</h2>
+            </div>
+            <div className="space-y-4">
+              {services.map(([title, description]) => (
+                <article key={title} className="border-b border-border pb-4">
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
 
       {/* <section aria-labelledby="values-title" className="mt-24">
         <div className="mb-8 max-w-2xl">
@@ -163,37 +200,6 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      <section aria-labelledby="products-title" className="mt-24 grid gap-12 lg:grid-cols-2">
-        <div>
-          <div className="mb-8">
-            <Laptop className="size-8 text-primary" />
-            <h2 id="products-title" className="mt-4 text-3xl font-bold">Products</h2>
-          </div>
-          <div className="space-y-4">
-            {products.map(([title, description]) => (
-              <article key={title} className="border-b border-border pb-4">
-                <h3 className="font-semibold">{title}</h3>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="mb-8">
-            <Wrench className="size-8 text-accent" />
-            <h2 id="services-title" className="mt-4 text-3xl font-bold">Services</h2>
-          </div>
-          <div className="space-y-4">
-            {services.map(([title, description]) => (
-              <article key={title} className="border-b border-border pb-4">
-                <h3 className="font-semibold">{title}</h3>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* <section aria-labelledby="why-choose-us-title" className="mt-24 rounded-3xl bg-secondary p-8 sm:p-12">
         <div className="max-w-2xl">
@@ -223,6 +229,7 @@ export default function AboutPage() {
           ))}
         </ul>
       </section> */}
-    </main>
+      <CallToAction />
+    </>
   );
 }

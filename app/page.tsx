@@ -148,7 +148,7 @@ export default function Home() {
           "--mesh-y": "0px",
         } as React.CSSProperties}
       >
-        {/* <div
+        <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -inset-10 -z-10 opacity-20 transition-transform duration-500 ease-out sm:-inset-16 sm:opacity-30 lg:-inset-24 lg:opacity-40"
                 style={{
@@ -156,7 +156,7 @@ export default function Home() {
                 }}
             >
                 <svg
-                    className="h-full w-full text-primary"
+                    className="h-full w-full text-muted-foreground"
                     viewBox="0 0 1440 760"
                     preserveAspectRatio="none"
                     fill="none"
@@ -209,8 +209,8 @@ export default function Home() {
                     </g>
                 </svg>
             </div>
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" />
-            <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
+            {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" /> */}
+            {/* <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
 
         {/* // Hero content */}
         <div className="max-w-7xl mx-auto px-6 pb-0 pt-8 sm:px-10 lg:px-12">
@@ -229,7 +229,7 @@ export default function Home() {
                 aria-hidden="true"
                 className="mt-4 block h-1.5 w-32 bg-gradient-to-r from-accent via-destructive to-primary"
               /> */}
-              <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+              <p className="mt-6 max-w-xl text-base text-muted-foreground">
                ProTechPC provides reliable PC products and professional IT solutions for home, business, school, and gaming needs, including PC upgrades, gaming builds, repairs, maintenance, cleaning, troubleshooting, laptop services, and printer support.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">
@@ -251,11 +251,11 @@ export default function Home() {
               </div>
 
             </div>
-            <Image
+            {/* <Image
               src={ProtechPcHeroLogo}
               alt="ProtechPC Logo"
               className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto w-full max-w-xs -translate-x-1/2 -translate-y-1/2 opacity-15 sm:max-w-md lg:relative lg:left-auto lg:top-auto lg:z-auto lg:translate-x-0 lg:translate-y-0 lg:max-w-lg lg:opacity-100"
-            />
+            /> */}
           </div>
         </div>
         <SlideShow />

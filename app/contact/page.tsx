@@ -47,12 +47,13 @@ export default function ContactPage() {
   const [subject, setSubject] = useState("");
 
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-title"
-      className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
-    >
-      <div className="grid gap-12 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
+    <>
+      <section
+        id="contact"
+        aria-labelledby="contact-title"
+        className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
+      >
+        <div className="grid gap-12 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
           <div>
             <h2
               id="contact-title"
@@ -78,8 +79,8 @@ export default function ContactPage() {
                   <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-foreground">
                     <Icon className="size-5" />
                   </div>
-                  
-                  
+
+
                   <span className="min-w-0">
                     <span className="block text-sm text-muted-foreground">
                       {label}
@@ -145,7 +146,7 @@ export default function ContactPage() {
                     onChange={(event) => setSubject(event.target.value)}
                   >
                     <option value="">
-                      
+
                     </option>
                     {subjectOptions.map((option) => (
                       <option key={option} value={option}>
@@ -193,7 +194,15 @@ export default function ContactPage() {
               </Button>
             </form>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
+      <iframe
+        title="Find ProtechPC on Google Maps"
+        src="https://www.google.com/maps?q=PROTECH+PC+-+Muzon&output=embed"
+        className="h-72 w-full border-0 sm:h-80"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </>
   )
 }

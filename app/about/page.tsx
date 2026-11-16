@@ -1,3 +1,6 @@
+import React from "react";
+import Image from "next/image"; 
+import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import {
   CheckCircle2,
   Eye,
@@ -61,23 +64,33 @@ export default function AboutPage() {
     <main id="about" className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-28">
       <section aria-labelledby="about-us-title" className="mt-20 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="space-y-5 text-muted-foreground">
-          <h2 id="about-us-title" className="text-3xl font-bold text-foreground">About Us</h2>
-          <p>
-            Founded in 2017, PROTECH PC is a Philippine-based IT company providing reliable
-            technology products and professional IT support services. With hands-on experience
-            dating back to 2017, we have built our reputation on one simple principle: prevent
-            problems before they stop your business.
-          </p>
-          <p>
-            We supply a complete range of computer sets, laptops, printers, peripherals, and
-            computer and laptop parts, backed by expert technical services, preventive maintenance,
-            and responsive after-sales support. Whether you are setting up a new office, upgrading
-            an existing workstation, or keeping your systems running smoothly, we deliver the
-            right products and solutions at fair and transparent prices.
-          </p>
+          <div className="space-y-4">
+            <h2 id="about-us-title" className="text-5xl font-bold text-foreground">Our Story</h2>
+            <p className="text-sm leading-7">
+              Founded in 2017, PROTECH PC is a Philippine-based IT company providing reliable
+              technology products and professional IT support services. With hands-on experience
+              dating back to 2017, we have built our reputation on one simple principle: prevent
+              problems before they stop your business.
+            </p>
+            <p className="text-sm leading-7">
+              We supply a complete range of computer sets, laptops, printers, peripherals, and
+              computer and laptop parts, backed by expert technical services, preventive maintenance,
+              and responsive after-sales support. Whether you are setting up a new office, upgrading
+              an existing workstation, or keeping your systems running smoothly, we deliver the
+              right products and solutions at fair and transparent prices.
+            </p>
+          </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="flex items-center justify-center">
+          <Image
+            src={ProtechPcHeroLogo}
+            alt="ProtechPC Logo"
+            className="h-auto max-h-100 w-full max-w-lg object-contain"
+          />
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:col-span-2">
           <article className="rounded-3xl border border-border bg-muted/30 p-8">
             <Target className="size-7 text-accent" />
             <h2 className="mt-4 text-xl font-semibold">Our Mission</h2>
@@ -99,7 +112,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="values-title" className="mt-24">
+      {/* <section aria-labelledby="values-title" className="mt-24">
         <div className="mb-8 max-w-2xl">
           <h2 id="values-title" className="text-3xl font-bold">Our Core Values</h2>
           <p className="mt-3 text-muted-foreground">The principles behind every recommendation, product, and service we provide.</p>
@@ -113,9 +126,9 @@ export default function AboutPage() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section aria-labelledby="goals-title" className="mt-24 grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      {/* <section aria-labelledby="goals-title" className="mt-24 grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <h2 id="goals-title" className="mt-4 text-3xl font-bold">Our Goals</h2>
           <p className="mt-3 leading-7 text-muted-foreground">
@@ -136,9 +149,9 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
 
-      <section aria-labelledby="objectives-title" className="mt-24">
+      {/* <section aria-labelledby="objectives-title" className="mt-24">
         <h2 id="objectives-title" className="text-3xl font-bold">Our Objectives</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {objectives.map((objective) => (
@@ -148,7 +161,7 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section aria-labelledby="products-title" className="mt-24 grid gap-12 lg:grid-cols-2">
         <div>
@@ -182,7 +195,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="why-choose-us-title" className="mt-24 rounded-3xl bg-secondary p-8 sm:p-12">
+      {/* <section aria-labelledby="why-choose-us-title" className="mt-24 rounded-3xl bg-secondary p-8 sm:p-12">
         <div className="max-w-2xl">
           <ShieldCheck className="size-8 text-primary" />
           <h2 id="why-choose-us-title" className="mt-4 text-3xl font-bold">Why Choose Us</h2>
@@ -195,9 +208,9 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
 
-      <section aria-labelledby="who-we-serve-title" className="mt-24 grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+      {/* <section aria-labelledby="who-we-serve-title" className="mt-24 grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-center">
         <div>
           <Network className="size-8 text-primary" />
           <h2 id="who-we-serve-title" className="mt-4 text-3xl font-bold">Who We Serve</h2>
@@ -209,7 +222,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </main>
   );
 }

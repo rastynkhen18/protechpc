@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import ProtechPcHeroLogo from "@/assets/protechpchero.png";
 import FadeInOnView from "@/components/FadeInOnView";
-import SlideShow from "@/components/slideShow";
+import SlideShow from "@/components/partnersMarquee";
 import {
   Accordion,
   AccordionContent,

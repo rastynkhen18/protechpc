@@ -6,14 +6,6 @@ import facebook from "@/assets/facebook-icon.svg";
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-border bg-muted/30">
-      <iframe
-        title="Find ProtechPC on Google Maps"
-        src="https://www.google.com/maps?q=PROTECH+PC+-+Muzon&output=embed"
-        className="h-72 w-full border-0 sm:h-80"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-
       <div className="max-w-7xl mx-auto grid gap-10 px-6 py-12 md:grid-cols-4">
         <div className="space-y-4">
           <Image

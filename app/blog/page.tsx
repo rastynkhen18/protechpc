@@ -1,3 +1,5 @@
+import React from "react";
+
 const facebookPostUrl =
   "https://www.facebook.com/ProTechPcStore/posts/pfbid0ZU7G7tiU71YQvihhZqQxakxcaHbu9HQTXKTwNj24mpPYPBvpsGA5iFuqk3TukRvnl";
 
@@ -87,7 +89,14 @@ export default function BlogPage() {
             </article>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {facebookHighlights.slice(1).map((highlight) => (
+              {facebookHighlights
+                .filter(
+                  (highlight): highlight is Extract<
+                    (typeof facebookHighlights)[number],
+                    { image: string }
+                  > => "image" in highlight,
+                )
+                .map((highlight) => (
                 <a
                   key={highlight.title}
                   href={highlight.href}
@@ -96,8 +105,7 @@ export default function BlogPage() {
                   className="group flex min-h-56 flex-col justify-between rounded-2xl border border-border bg-muted/30 p-6 transition-colors hover:bg-muted"
                 >
                   <div
-                    role="img"
-                    aria-label={`${highlight.title} thumbnail`}
+                    aria-hidden="true"
                     className="mb-6 h-36 rounded-xl bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.02]"
                     style={{ backgroundImage: `url("${highlight.image}")` }}
                   />
@@ -116,7 +124,7 @@ export default function BlogPage() {
                     {highlight.action} →
                   </span>
                 </a>
-              ))}
+                ))}
             </div>
           </div>
         </section>

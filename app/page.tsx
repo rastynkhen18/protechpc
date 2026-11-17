@@ -223,7 +223,7 @@ export default function Home() {
                 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl"
               >
                 Build Your Dream{" "}
-                <span className="bg-gradient-to-r from-accent via-destructive to-primary bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
                   PC With Us Now.
                 </span>
               </h1>

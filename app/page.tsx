@@ -269,39 +269,58 @@ export default function Home() {
         className="overflow-hidden bg-background py-12"
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
-              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Featured / What We Do
-                  </p>
-                  <h2
-                    id="featured-title"
-                    className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
-                  >
-                    Practical technology support, all in one place.
-                  </h2>
-                </div>
-                <p className="max-w-sm text-sm leading-6 text-muted-foreground">
-                  From choosing the right device to keeping it running at its best, we make technology easier.
-                </p>
-              </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto flex w-fit items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="h-px w-8 bg-primary" />
+              What We Do
+              <span className="h-px w-8 bg-accent" />
+            </div>
+            <h2
+              id="featured-title"
+              className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl"
+            >
+              Technology that works{" "}
+              <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
+                for you.
+              </span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">
+              From choosing the right device to keeping it running at its best,
+              we make technology easier.
+            </p>
+          </div>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {featuredServices.map(({ icon: Icon, title, description }) => (
-                  <article
-                    key={title}
-                    className="group rounded-2xl border border-border bg-muted/30 p-6 transition-colors hover:bg-muted"
-                  >
-                    <div className="flex size-11 items-center justify-center rounded-xl bg-background text-primary shadow-sm">
+          <div className="relative mt-12">
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 hidden size-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-primary/20 lg:block"
+            />
+            <div className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredServices.map(({ icon: Icon, title, description }, index) => (
+                <article
+                  key={title}
+                  className="group relative overflow-hidden rounded-3xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <h3 className="mt-6 font-semibold">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                      {description}
-                    </p>
-                  </article>
-                ))}
-              </div>
+                    <span className="font-mono text-xs font-semibold text-muted-foreground/60">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-8 font-semibold">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {description}
+                  </p>
+                  <ArrowUpRight
+                    className="absolute bottom-6 right-6 size-4 text-muted-foreground/40 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary"
+                    aria-hidden="true"
+                  />
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

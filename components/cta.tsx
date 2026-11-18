@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function cta() {
     return (
-        <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-12">
+        <section className="mx-auto max-w-7xl my-5 sm:px-10 lg:px-12">
             <div className="flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-primary px-7 py-9 text-primary-foreground sm:flex-row sm:items-center sm:px-10">
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white">

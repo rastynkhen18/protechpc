@@ -31,10 +31,10 @@ const services = [
 export default function AboutPage() {
   return (
     <>
-      <section aria-labelledby="about-us-title" className="mx-auto max-w-7xl mt-20 grid gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:px-12 lg:py-28">
+      <section aria-labelledby="about-us-title" className="mx-auto max-w-7xl mt-8 grid gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:px-12 lg:py-28">
         <div className="space-y-5 text-muted-foreground">
           <article className="space-y-4">
-            <h2 id="about-us-title" className="text-5xl font-bold text-foreground">Our Story</h2>
+            <h2 id="about-us-title" className="max-w-3xl text-6xl font-semibold leading-[1.05] tracking-tight text-foreground">Our Story</h2>
             <p className="text-sm leading-7">
               Founded in 2017, PROTECH PC is a Philippine-based IT company providing reliable
               technology products and professional IT support services. With hands-on experience
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:col-span-2">
-          <article className="rounded-3xl border border-border bg-muted/30 p-8">
+          <article className="rounded-3xl bg-muted/30 p-8">
             <Target className="size-7 text-accent" />
             <h2 className="mt-4 text-xl font-semibold">Our Mission</h2>
             <p className="mt-3 leading-7 text-muted-foreground">
@@ -69,7 +69,7 @@ export default function AboutPage() {
               technical excellence, and a proactive approach to customer care.
             </p>
           </article>
-          <article className="rounded-3xl border border-border bg-muted/30 p-8">
+          <article className="rounded-3xl bg-muted/30 p-8">
             <Eye className="size-7 text-destructive" />
             <h2 className="mt-4 text-xl font-semibold">Our Vision</h2>
             <p className="mt-3 leading-7 text-muted-foreground">

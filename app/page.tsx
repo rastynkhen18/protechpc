@@ -220,7 +220,7 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl">
               <h1
                 id="hero-title"
-                className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl"
+                className="max-w-3xl text-6xl font-semibold leading-[1.05] tracking-tight"
               >
                 Build Your Dream{" "}
                 <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">

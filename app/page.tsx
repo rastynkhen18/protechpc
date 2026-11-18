@@ -394,7 +394,7 @@ export default function Home() {
                     id="faq-title"
                     className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
                   >
-                    Questions, answered.
+                    Frequently Asked Questions.
                   </h2>
                   <p className="mt-4 max-w-md leading-7 text-muted-foreground">
                     Can&apos;t find what you need? Our team is happy to help you find the right solution.

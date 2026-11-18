@@ -312,6 +312,34 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
           <FadeInOnView>
+            <div className="grid gap-12 border-t border-border py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Simple, dependable care.
+                </p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+                  How We Work
+                </h2>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {process.map(([number, title, description]) => (
+                  <div key={number} className="flex gap-4">
+                    <span className="text-sm font-semibold text-muted-foreground">
+                      {number}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold">{title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInOnView>
+
+          <FadeInOnView>
             <div className="border-t border-border py-16 sm:py-20">
               <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
                 <div>
@@ -345,34 +373,6 @@ export default function Home() {
               </div>
             </div>
             <ClientsMarquee />
-          </FadeInOnView>
-
-          <FadeInOnView>
-            <div className="grid gap-12 border-t border-border py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Simple, dependable care.
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-                  How We Work
-                </h2>
-              </div>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {process.map(([number, title, description]) => (
-                  <div key={number} className="flex gap-4">
-                    <span className="text-sm font-semibold text-muted-foreground">
-                      {number}
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">{title}</h3>
-                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                        {description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </FadeInOnView>
         </div>
       </section>

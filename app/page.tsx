@@ -400,32 +400,48 @@ export default function Home() {
 
           <FadeInOnView>
             <div className="border-t border-border py-16 sm:py-20">
-              <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Why Choose Us
-                  </p>
-                  <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    Technology support with fewer surprises.
-                  </h2>
-                  <p className="mt-4 max-w-md leading-7 text-muted-foreground">
-                    Friendly, responsive after-sales support you can count on.
-                  </p>
+              <div className="grid overflow-hidden rounded-3xl border border-border bg-muted/30 lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="relative overflow-hidden bg-foreground p-8 text-background sm:p-10 lg:p-12">
+                  <div
+                    aria-hidden="true"
+                    className="absolute -right-20 -top-20 size-56 rounded-full border-[24px] border-background/10"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute -bottom-28 -left-16 size-64 rounded-full border-[32px] border-primary/30"
+                  />
+                  <div className="relative flex h-full flex-col">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/60">
+                      Why Choose Us
+                    </p>
+                    <h2 className="mt-5 max-w-sm text-3xl font-semibold tracking-tight sm:text-4xl">
+                      Technology support with fewer surprises.
+                    </h2>
+                    <p className="mt-5 max-w-md leading-7 text-background/70">
+                      Friendly, responsive after-sales support you can count on.
+                    </p>
+                    <div className="mt-auto hidden pt-12 sm:block">
+                      <div className="h-px w-16 bg-primary" />
+                      <p className="mt-4 text-sm font-medium text-background/70">
+                        Built around your needs.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="grid divide-y divide-border">
+                <div className="grid gap-px bg-border sm:grid-cols-2">
                   {benefits.map((benefit, index) => (
                     <div
                       key={benefit}
-                      className="flex items-start gap-4 py-5 first:pt-0 last:pb-0"
+                      className="group bg-background p-6 transition-colors hover:bg-muted/50 sm:p-8"
                     >
-                      <span className="mt-0.5 text-sm font-semibold text-muted-foreground">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <div className="flex gap-3">
-                        <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-500" />
-                        <p className="leading-7">{benefit}</p>
+                      <div className="flex items-center justify-between">
+                        <CheckCircle2 className="size-5 text-green-500 transition-transform group-hover:scale-110" />
+                        <span className="font-mono text-xs font-semibold text-muted-foreground/60">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
                       </div>
+                      <p className="mt-8 text-sm leading-6">{benefit}</p>
                     </div>
                   ))}
                 </div>

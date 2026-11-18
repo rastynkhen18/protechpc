@@ -42,15 +42,13 @@ const facebookHighlights = [
 
 export default function BlogPage() {
   return (
-    <main
+    <section
       id="blog"
-      className="min-h-screen overflow-hidden bg-background py-10 text-foreground"
+      aria-labelledby="blog-title"
+      className="overflow-hidden bg-background py-10"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
-        <section
-          aria-labelledby="blog-title"
-          className="border-t border-border pt-16 sm:pt-20"
-        >
+        <div className="border-t border-border pt-16 sm:pt-20">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               From Facebook
@@ -129,8 +127,8 @@ export default function BlogPage() {
                 ))}
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </main>
+    </section>
   );
 }

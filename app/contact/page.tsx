@@ -51,13 +51,15 @@ export default function ContactPage() {
       <section
         id="contact"
         aria-labelledby="contact-title"
-        className="max-w-7xl mx-auto px-6 py-16 sm:px-10 sm:py-20 lg:px-12 lg:py-24"
+        className="overflow-hidden bg-background py-10"
       >
-        <div className="grid gap-12 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
-          <div>
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+          <div className="border-t border-border pt-16 sm:pt-20">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
+              <div>
             <h2
               id="contact-title"
-              className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+              className="mt-3 text-5xl font-semibold tracking-tight"
             >
               Let&apos;s Power Up Your Technology
             </h2>
@@ -71,6 +73,7 @@ export default function ContactPage() {
             <div>
               {contactDetails.map(({ icon: Icon, label, value, href }) => (
                 <a
+                  key={href}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
@@ -92,10 +95,10 @@ export default function ContactPage() {
                 </a>
               ))}
             </div>
-          </div>
+              </div>
 
 
-          <div className="mt-8">
+              <div className="mt-8">
             <form
               action="mailto:protechpcstore@gmail.com"
               method="post"
@@ -193,6 +196,8 @@ export default function ContactPage() {
                 Send Message
               </Button>
             </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>

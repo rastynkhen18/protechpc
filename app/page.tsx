@@ -232,7 +232,7 @@ export default function Home() {
                 className="mt-4 block h-1.5 w-32 bg-gradient-to-r from-accent via-destructive to-primary"
               /> */}
               <p className="mt-6 max-w-xl text-base text-muted-foreground">
-               ProTechPC provides reliable PC products and professional IT solutions for home, business, school, and gaming needs, including PC upgrades, gaming builds, repairs, maintenance, cleaning, troubleshooting, laptop services, and printer support.
+                From powerful gaming setups to dependable everyday devices, ProTech PC helps you get more from your technology. Find the right PC, laptop, or printer. With IT support and preventive maintenance to keep your devices secure, reliable, and performing at their best.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button

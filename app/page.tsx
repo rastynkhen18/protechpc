@@ -12,6 +12,10 @@ import {
   Wrench,
   Zap,
   ArrowUpRight,
+  MessageCircle,
+  ClipboardCheck,
+  PackageCheck,
+  Headphones,
 } from "lucide-react";
 import {
   Accordion,
@@ -94,10 +98,26 @@ const frequentlyAskedQuestions = [
 ];
 
 const process = [
-  ["1", "Consult", "Understand your needs, budget, and use case"],
-  ["2", "Recommend", "Suggest the right products and configuration"],
-  ["3", "Deliver & Set Up", "Prepare, install, and test your equipment"],
-  ["4", "Support", "Provide after-sales help and maintenance"],
+  {
+    icon: MessageCircle,
+    title: "Consult",
+    description: "Understand your needs, budget, and use case",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Recommend",
+    description: "Suggest the right products and configuration",
+  },
+  {
+    icon: PackageCheck,
+    title: "Deliver & Set Up",
+    description: "Prepare, install, and test your equipment",
+  },
+  {
+    icon: Headphones,
+    title: "Support",
+    description: "Provide after-sales help and maintenance",
+  },
 ];
 
 const benefits = [
@@ -331,29 +351,49 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
           <FadeInOnView>
-            <div className="grid gap-12 border-t border-border py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <div className="border-t border-border py-16 sm:py-20">
+              <div className="mx-auto max-w-3xl text-center">
+                <div className="mx-auto flex w-fit items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  <span className="h-px w-8 bg-accent" />
                   Simple, dependable care.
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-                  How We Work
+                  <span className="h-px w-8 bg-primary" />
+                </div>
+                <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+                  How We{" "}
+                  <span className="bg-gradient-to-r from-accent via-destructive to-primary bg-clip-text text-transparent">
+                    Work.
+                  </span>
                 </h2>
+                <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">
+                  From the first conversation to ongoing support, every step is
+                  connected to making your technology work better.
+                </p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {process.map(([number, title, description]) => (
-                  <div key={number} className="flex gap-4">
-                    <span className="text-sm font-semibold text-muted-foreground">
-                      {number}
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">{title}</h3>
-                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+
+              <div className="relative mt-12">
+                <div
+                  aria-hidden="true"
+                  className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-gradient-to-r from-accent/40 via-destructive/50 to-primary/40 sm:block"
+                />
+                <div className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {process.map(({ icon: Icon, title, description }, index) => (
+                    <article
+                      key={title}
+                      className="group relative rounded-3xl border border-border bg-background p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                    >
+                      <div className="relative mx-auto flex size-16 items-center justify-center rounded-full border-8 border-background bg-primary/10 text-primary ring-1 ring-border transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                        <Icon className="size-5" aria-hidden="true" />
+                      </div>
+                      <span className="mt-5 block font-mono text-xs font-semibold tracking-widest text-muted-foreground/60">
+                        STEP {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="mt-2 font-semibold">{title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
                         {description}
                       </p>
-                    </div>
-                  </div>
-                ))}
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeInOnView>

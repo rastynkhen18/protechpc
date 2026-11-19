@@ -35,11 +35,12 @@ const contactDetails = [
 const subjectOptions = [
   "Product inquiry",
   "Custom PC build or upgrade",
-  "Computer repair",
-  "Printer repair",
-  "IT support",
-  "Preventive maintenance",
-  "Networking support",
+  "PC Repair",
+  "Laptop Repair",
+  "Printer Repair",
+  "IT Support",
+  "Preventive Maintenance",
+  "Networking Support",
   "Other",
 ];
 

@@ -299,7 +299,7 @@ export default function Home() {
                 aria-hidden="true"
                 className="mt-4 block h-1.5 w-32 bg-gradient-to-r from-accent via-destructive to-primary"
               /> */}
-              <p className="mt-6 max-w-xl text-base text-muted-foreground">
+              <p className="mt-6 max-w-xl text-sm text-muted-foreground">
                 From powerful gaming setups to dependable everyday devices, ProTechPC helps you get more from your technology. Find the right PC, laptop, or printer. With IT support and preventive maintenance to keep your devices secure, reliable, and performing at their best.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">

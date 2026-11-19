@@ -42,7 +42,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="my-10 grid gap-6 sm:grid-cols-2">
           <article className="rounded-3xl bg-muted/30 p-8">
             <Target className="size-7 text-accent" />
             <h2 className="mt-4 text-xl font-semibold">Our Mission</h2>
@@ -62,8 +62,8 @@ export default function AboutPage() {
             </p>
           </article>
         </div>
+        <CallToAction />
       </div>
-      <CallToAction />
     </section>
   );
 }

@@ -219,68 +219,68 @@ export default function Home() {
         } as React.CSSProperties}
       >
         <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -inset-10 -z-10 opacity-20 transition-transform duration-500 ease-out sm:-inset-16 sm:opacity-30 lg:-inset-24 lg:opacity-40"
-                style={{
-                    transform: "translate3d(var(--mesh-x), var(--mesh-y), 0)",
-                }}
-            >
-                <svg
-                    className="h-full w-full text-muted-foreground"
-                    viewBox="0 0 1440 760"
-                    preserveAspectRatio="none"
-                    fill="none"
-                >
-                    <defs>
-                        <filter id="node-glow" x="-100%" y="-100%" width="300%" height="300%">
-                            <feGaussianBlur stdDeviation="5" result="blur" />
-                            <feMerge>
-                                <feMergeNode in="blur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <g stroke="currentColor" strokeWidth="1" opacity=".65">
-                        <path d="M-30 580 150 390 330 520 510 260 700 430 860 170 1040 350 1230 120 1480 280" />
-                        <path d="M-30 580 120 720 330 520 480 700 700 430 850 690 1040 350 1190 650 1480 280" />
-                        <path d="M150 390 330 520 510 260 700 430 860 170 1040 350 1230 120" />
-                        <path d="M120 720 330 520 480 700 700 430 850 690 1040 350 1190 650" />
-                        <path d="M330 520 700 430 1040 350 1190 650" />
-                        <path d="M510 260 480 700M860 170 850 690M1230 120 1190 650" />
-                        <path d="M150 390 480 700M510 260 850 690M860 170 1190 650" />
-                        <path d="M330 520 860 170M700 430 1230 120M700 430 480 700" />
-                        <path d="M-20 160 150 390M1040 350 1480 280M850 690 1230 120" />
-                    </g>
-                    <g fill="currentColor" filter="url(#node-glow)" opacity=".9">
-                        <circle cx="30" cy="160" r="2" />
-                        <circle cx="150" cy="390" r="3" />
-                        <circle cx="330" cy="520" r="4" />
-                        <circle cx="510" cy="260" r="3" />
-                        <circle cx="700" cy="430" r="5" />
-                        <circle cx="860" cy="170" r="3" />
-                        <circle cx="1040" cy="350" r="4" />
-                        <circle cx="1230" cy="120" r="3" />
-                        <circle cx="480" cy="700" r="3" />
-                        <circle cx="850" cy="690" r="3" />
-                        <circle cx="1190" cy="650" r="4" />
-                        <circle cx="1430" cy="500" r="2" />
-                    </g>
-                    <g fill="currentColor" opacity=".06">
-                        <path d="m150 390 180 130 180-260Z" />
-                        <path d="m330 520 370-90-220 270Z" />
-                        <path d="m700 430 160-260 180 180Z" />
-                        <path d="m700 430 340-80-190 340Z" />
-                        <path d="m1040 350 190-230-40 530Z" />
-                    </g>
-                    <g fill="currentColor" opacity=".35">
-                        <circle cx="30" cy="160" r="7" />
-                        <circle cx="700" cy="430" r="10" />
-                        <circle cx="1430" cy="500" r="7" />
-                    </g>
-                </svg>
-            </div>
-            {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" /> */}
-            {/* <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
+          aria-hidden="true"
+          className="pointer-events-none absolute -inset-10 -z-10 opacity-20 transition-transform duration-500 ease-out sm:-inset-16 sm:opacity-30 lg:-inset-24 lg:opacity-40"
+          style={{
+            transform: "translate3d(var(--mesh-x), var(--mesh-y), 0)",
+          }}
+        >
+          <svg
+            className="h-full w-full text-muted-foreground"
+            viewBox="0 0 1440 760"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <defs>
+              <filter id="node-glow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <g stroke="currentColor" strokeWidth="1" opacity=".65">
+              <path d="M-30 580 150 390 330 520 510 260 700 430 860 170 1040 350 1230 120 1480 280" />
+              <path d="M-30 580 120 720 330 520 480 700 700 430 850 690 1040 350 1190 650 1480 280" />
+              <path d="M150 390 330 520 510 260 700 430 860 170 1040 350 1230 120" />
+              <path d="M120 720 330 520 480 700 700 430 850 690 1040 350 1190 650" />
+              <path d="M330 520 700 430 1040 350 1190 650" />
+              <path d="M510 260 480 700M860 170 850 690M1230 120 1190 650" />
+              <path d="M150 390 480 700M510 260 850 690M860 170 1190 650" />
+              <path d="M330 520 860 170M700 430 1230 120M700 430 480 700" />
+              <path d="M-20 160 150 390M1040 350 1480 280M850 690 1230 120" />
+            </g>
+            <g fill="currentColor" filter="url(#node-glow)" opacity=".9">
+              <circle cx="30" cy="160" r="2" />
+              <circle cx="150" cy="390" r="3" />
+              <circle cx="330" cy="520" r="4" />
+              <circle cx="510" cy="260" r="3" />
+              <circle cx="700" cy="430" r="5" />
+              <circle cx="860" cy="170" r="3" />
+              <circle cx="1040" cy="350" r="4" />
+              <circle cx="1230" cy="120" r="3" />
+              <circle cx="480" cy="700" r="3" />
+              <circle cx="850" cy="690" r="3" />
+              <circle cx="1190" cy="650" r="4" />
+              <circle cx="1430" cy="500" r="2" />
+            </g>
+            <g fill="currentColor" opacity=".06">
+              <path d="m150 390 180 130 180-260Z" />
+              <path d="m330 520 370-90-220 270Z" />
+              <path d="m700 430 160-260 180 180Z" />
+              <path d="m700 430 340-80-190 340Z" />
+              <path d="m1040 350 190-230-40 530Z" />
+            </g>
+            <g fill="currentColor" opacity=".35">
+              <circle cx="30" cy="160" r="7" />
+              <circle cx="700" cy="430" r="10" />
+              <circle cx="1430" cy="500" r="7" />
+            </g>
+          </svg>
+        </div>
+        {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_32%,color-mix(in_srgb,var(--primary)_18%,transparent),transparent_30%),radial-gradient(circle_at_20%_100%,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_34%)]" /> */}
+        {/* <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--border)_16%,transparent)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,var(--foreground),transparent_85%)] sm:[background-size:48px_48px] lg:[background-size:64px_64px]" /> */}
 
         {/* // Hero content */}
         <div className="max-w-7xl mx-auto px-6 pb-0 pt-8 sm:px-10 lg:px-12">
@@ -599,9 +599,9 @@ export default function Home() {
               </div>
             </div>
           </FadeInOnView>
+          <CallToAction />
         </div>
       </section>
-      <CallToAction />
     </>
   );
 }

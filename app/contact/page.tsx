@@ -59,7 +59,7 @@ export default function ContactPage() {
               <div>
             <h2
               id="contact-title"
-              className="mt-3 text-5xl font-semibold tracking-tight"
+              className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl sm:leading-[1.05] lg:text-5xl lg:leading-[1.05]"
             >
               Let&apos;s Power Up Your Technology
             </h2>

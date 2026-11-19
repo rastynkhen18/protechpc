@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Laptop,
   MonitorCog,
@@ -133,9 +133,53 @@ const benefits = [
 const googleMapsReviewsUrl =
   "https://www.google.com/maps/place/PROTECH+PC+-+Muzon/@14.8020315,121.033923,1093m/data=!3m1!1e3!4m17!1m8!3m7!1s0x3397afa2230e01f9:0x6896acb70b3e24d5!2sPROTECH+PC+-+Muzon!8m2!3d14.8020315!4d121.033923!10e5!16s%2Fg%2F11v67hq4n8!3m7!1s0x3397afa2230e01f9:0x6896acb70b3e24d5!8m2!3d14.8020315!4d121.033923!9m1!1b1!16s%2Fg%2F11v67hq4n8";
 
+type GoogleReviewSummary = {
+  rating: number;
+  reviewCount: number;
+};
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
+  const [googleReviewSummary, setGoogleReviewSummary] =
+    useState<GoogleReviewSummary>({
+      rating: 4.6,
+      reviewCount: 14,
+    });
+
+  useEffect(() => {
+    let active = true;
+
+    const loadGoogleReviewSummary = async () => {
+      try {
+        const response = await fetch("/api/google-reviews", {
+          cache: "no-store",
+        });
+
+        if (!response.ok) {
+          throw new Error(`Google reviews request failed: ${response.status}`);
+        }
+
+        const data = (await response.json()) as GoogleReviewSummary;
+
+        if (active) {
+          setGoogleReviewSummary({
+            rating: data.rating,
+            reviewCount: data.reviewCount,
+          });
+        }
+      } catch (error: unknown) {
+        console.error("Unable to load Google review summary.", error);
+      }
+    };
+
+    loadGoogleReviewSummary();
+    const refreshTimer = window.setInterval(loadGoogleReviewSummary, 300000);
+
+    return () => {
+      active = false;
+      window.clearInterval(refreshTimer);
+    };
+  }, []);
 
   function handlePointerMove(event: React.PointerEvent<HTMLElement>) {
     const hero = heroRef.current;
@@ -463,7 +507,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
           <FadeInOnView>
-            <div className="border-t border-border py-16 sm:py-20">
+            <div className="py-16 sm:py-20">
               <div className="mx-auto max-w-2xl text-center">
                 <h2
                   id="reviews-title"
@@ -488,10 +532,10 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-6xl font-semibold tracking-tighter sm:text-8xl">
-                  4.6
+                  {googleReviewSummary.rating.toFixed(1)}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Based on 14 Google reviews
+                  Based on {googleReviewSummary.reviewCount} Google reviews
                 </p>
               </div>
 
@@ -517,7 +561,7 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
           <FadeInOnView>
-            <div className="border-t border-border py-16 sm:py-20">
+            <div className="py-16 sm:py-20">
               <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">

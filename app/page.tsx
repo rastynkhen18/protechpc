@@ -16,6 +16,7 @@ import {
   ClipboardCheck,
   PackageCheck,
   Headphones,
+  Star,
 } from "lucide-react";
 import {
   Accordion,
@@ -128,6 +129,9 @@ const benefits = [
   "In-house setup, repair, and maintenance services for complete peace of mind",
   "Friendly, responsive after-sales support you can count on",
 ];
+
+const googleMapsReviewsUrl =
+  "https://www.google.com/maps/place/PROTECH+PC+-+Muzon/@14.8020315,121.033923,1093m/data=!3m1!1e3!4m17!1m8!3m7!1s0x3397afa2230e01f9:0x6896acb70b3e24d5!2sPROTECH+PC+-+Muzon!8m2!3d14.8020315!4d121.033923!10e5!16s%2Fg%2F11v67hq4n8!3m7!1s0x3397afa2230e01f9:0x6896acb70b3e24d5!8m2!3d14.8020315!4d121.033923!9m1!1b1!16s%2Fg%2F11v67hq4n8";
 
 
 export default function Home() {
@@ -448,6 +452,60 @@ export default function Home() {
               </div>
             </div>
             <ClientsMarquee />
+          </FadeInOnView>
+        </div>
+      </section>
+
+      <section
+        id="reviews"
+        aria-labelledby="reviews-title"
+        className="overflow-hidden bg-muted/30 py-10"
+      >
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
+          <FadeInOnView>
+            <div className="border-t border-border py-16 sm:py-20">
+              <div className="mx-auto max-w-2xl text-center">
+                <h2
+                  id="reviews-title"
+                  className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+                >
+                  Reviews
+                </h2>
+                <p className="mt-4 leading-7 text-muted-foreground">
+                  See what customers are saying about their experience with
+                  ProTech PC.
+                </p>
+              </div>
+
+              <div className="mx-auto mt-10 max-w-3xl text-center">
+                <div className="flex justify-center gap-2 text-yellow-400">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star
+                      key={index}
+                      className="size-8 fill-yellow-400 sm:size-10"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+                <p className="text-6xl font-semibold tracking-tighter sm:text-8xl">
+                  4.6
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Based on 14 Google reviews
+                </p>
+              </div>
+
+              <div className="mt-10 text-center">
+                <Link
+                  href={googleMapsReviewsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+                >
+                  Read all reviews on Google Maps
+                </Link>
+              </div>
+            </div>
           </FadeInOnView>
         </div>
       </section>

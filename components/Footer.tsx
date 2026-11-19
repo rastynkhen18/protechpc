@@ -5,7 +5,7 @@ import facebook from "@/assets/facebook-icon.svg";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-muted/30">
       <div className="max-w-7xl mx-auto grid gap-10 px-6 py-12 md:grid-cols-4">
         <div className="space-y-4">
           <Image

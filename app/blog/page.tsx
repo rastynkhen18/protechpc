@@ -68,15 +68,6 @@ export default function BlogPage() {
                 videos from ProTechPC.
               </p>
             </div>
-
-            <a
-              href={driveFolderUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center justify-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-muted"
-            >
-              Open Google Drive →
-            </a>
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

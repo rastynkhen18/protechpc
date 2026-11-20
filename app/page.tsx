@@ -288,7 +288,7 @@ export default function Home() {
             <div className="relative z-10 max-w-2xl">
               <h1
                 id="hero-title"
-                className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl"
+                className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl"
               >
                 Build Your Dream{" "}
                 <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
@@ -345,7 +345,7 @@ export default function Home() {
             </div>
             <h2
               id="featured-title"
-              className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl"
+              className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl"
             >
               Technology that works{" "}
               <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
@@ -406,7 +406,7 @@ export default function Home() {
                   Simple, dependable care.
                   <span className="h-px w-8 bg-primary" />
                 </div>
-                <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+                <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl">
                   How We{" "}
                   <span className="bg-gradient-to-r from-accent via-destructive to-primary bg-clip-text text-transparent">
                     Work.
@@ -511,7 +511,7 @@ export default function Home() {
               <div className="mx-auto max-w-2xl text-center">
                 <h2
                   id="reviews-title"
-                  className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+                  className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl"
                 >
                   Reviews
                 </h2>
@@ -569,7 +569,7 @@ export default function Home() {
                   </p>
                   <h2
                     id="faq-title"
-                    className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+                    className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl"
                   >
                     Frequently Asked Questions.
                   </h2>

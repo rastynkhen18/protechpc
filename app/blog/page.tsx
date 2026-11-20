@@ -119,7 +119,6 @@ export default function BlogPage() {
           </div>
 
           <div className="mt-16 border-t border-border pt-12 sm:mt-20 sm:pt-16">
-
             <div className="mt-8 grid gap-6">
               {facebookHighlights.map((highlight) => (
                 <article
@@ -128,11 +127,13 @@ export default function BlogPage() {
                 >
                   {highlight.image ? (
                     <div
-                      role="img"
-                      aria-label={highlight.title}
-                      className="relative min-h-64 overflow-hidden bg-cover bg-center md:min-h-80"
-                      style={{ backgroundImage: `url("${highlight.image}")` }}
+                      className="relative min-h-64 overflow-hidden md:min-h-80"
                     >
+                      <img
+                        src={highlight.image}
+                        alt={highlight.title}
+                        className="h-full w-full object-contain"
+                      />
                       <div
                         aria-hidden="true"
                         className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"

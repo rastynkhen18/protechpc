@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { useState } from "react";
+import type { FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -46,6 +48,63 @@ const subjectOptions = [
 
 export default function ContactPage() {
   const [subject, setSubject] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("error");
+      return;
+    }
+
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const selectedSubject = String(formData.get("subject") ?? "").trim();
+    const subjectDetails = String(formData.get("subjectDetails") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const resolvedSubject =
+      selectedSubject === "Other" && subjectDetails
+        ? subjectDetails
+        : selectedSubject;
+
+    setIsSubmitting(true);
+    setStatus("idle");
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name,
+          email,
+          subject: resolvedSubject,
+          message,
+          subjectDetails,
+          from_name: name,
+          from_email: email,
+          reply_to: email,
+        },
+        { publicKey },
+      );
+
+      form.reset();
+      setSubject("");
+      setStatus("success");
+    } catch (error) {
+      console.error("EmailJS submission failed:", error);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <>
@@ -101,9 +160,7 @@ export default function ContactPage() {
 
               <div className="mt-8">
             <form
-              action="mailto:protechpcstore@gmail.com"
-              method="post"
-              encType="text/plain"
+              onSubmit={handleSubmit}
               className="p-0 sm:p-2"
             >
 
@@ -193,9 +250,22 @@ export default function ContactPage() {
                 size="lg"
                 className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] mt-4 px-4 py-2 text-base cursor-pointer hover:shadow-primary/30 md:text-sm"
                 type="submit"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
+              <p className="mt-3 min-h-6 text-sm" aria-live="polite">
+                {status === "success" && (
+                  <span className="text-green-600">
+                    Your message has been sent. We&apos;ll get back to you soon.
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="text-destructive">
+                    We couldn&apos;t send your message. Please try again or email us directly.
+                  </span>
+                )}
+              </p>
             </form>
               </div>
             </div>

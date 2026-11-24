@@ -1,10 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Play, X } from "lucide-react";
 import SocialBanner from "@/components/SocialBanner";
-
-const driveFolderUrl =
-  "https://drive.google.com/drive/folders/1qFPDPwjBnyS4NSg0Z2OvvVoCzLir0cMe?usp=sharing";
 
 
 const blogVideos = [
@@ -32,6 +30,27 @@ const blogVideos = [
 ] as const;
 
 export default function BlogPage() {
+  const [activeVideo, setActiveVideo] = useState<(typeof blogVideos)[number] | null>(
+    null,
+  );
+
+  useEffect(() => {
+    if (!activeVideo) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveVideo(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeVideo]);
+
   return (
     <section
       id="blog"
@@ -64,34 +83,39 @@ export default function BlogPage() {
                 key={video.id}
                 className="overflow-hidden rounded-2xl border border-border bg-muted/30 shadow-sm"
               >
-                <div className="aspect-video overflow-hidden bg-black">
+                <button
+                  type="button"
+                  onClick={() => setActiveVideo(video)}
+                  className="group relative aspect-video w-full overflow-hidden bg-black text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  aria-label={`Play ${video.title}`}
+                >
                   <iframe
-                    title={video.title}
+                    title={`${video.title} preview`}
                     src={`https://drive.google.com/file/d/${video.id}/preview`}
-                    className="h-full w-full border-0"
+                    className="pointer-events-none h-full w-full border-0"
                     loading={index < 3 ? "eager" : "lazy"}
-                    allow="autoplay; fullscreen; encrypted-media"
-                    allowFullScreen
+                    tabIndex={-1}
                   />
-                </div>
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/35">
+                    <span className="flex size-14 items-center justify-center rounded-full bg-white text-black shadow-lg transition-transform group-hover:scale-105">
+                      <Play className="ml-1 size-6 fill-current" />
+                    </span>
+                  </span>
+                </button>
                 <div className="flex items-center justify-between gap-4 p-5">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                      Video {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h2 className="mt-2 text-lg font-semibold tracking-tight">
+                    <h2 className="text-lg font-semibold tracking-tight">
                       {video.title}
                     </h2>
                   </div>
-                  <a
-                    href={`https://drive.google.com/file/d/${video.id}/view?usp=sharing`}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${video.title} on Google Drive`}
+                  <button
+                    type="button"
+                    onClick={() => setActiveVideo(video)}
+                    aria-label={`Play ${video.title}`}
                     className="shrink-0 rounded-full border border-border px-3 py-2 text-sm font-semibold transition-colors hover:bg-background"
                   >
-                    Open
-                  </a>
+                    Play
+                  </button>
                 </div>
               </article>
             ))}
@@ -99,6 +123,37 @@ export default function BlogPage() {
           <SocialBanner />
         </div>
       </div>
+
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeVideo.title}
+          onMouseDown={(event) => {
+            if (event.currentTarget === event.target) setActiveVideo(null);
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setActiveVideo(null)}
+            className="fixed right-4 top-4 z-[110] flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/70 text-white shadow-lg transition-colors hover:bg-black sm:right-6 sm:top-6"
+            aria-label="Close video"
+          >
+            <X className="size-6" />
+          </button>
+
+          <div className="aspect-video w-full max-w-5xl overflow-hidden rounded-xl bg-black shadow-2xl">
+            <iframe
+              title={activeVideo.title}
+              src={`https://drive.google.com/file/d/${activeVideo.id}/preview`}
+              className="h-full w-full border-0"
+              allow="autoplay; fullscreen; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

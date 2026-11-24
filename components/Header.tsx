@@ -13,6 +13,7 @@ import {
 	Monitor,
 	MonitorCog,
 	Printer,
+	Network,
 	X,
 } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
@@ -104,7 +105,7 @@ const services = [
 			"Setup of new computers, printers, peripherals, operating systems, and software, including configuration and user orientation.",
 	},
 	{
-		icon: Monitor,
+		icon: Network,
 		title: "Networking Support",
 		description:
 			"Basic network setup, Wi-Fi configuration, and troubleshooting for homes and offices.",

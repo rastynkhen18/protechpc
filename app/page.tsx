@@ -4,19 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
-  Laptop,
-  MonitorCog,
-  Printer,
   ShoppingCart,
   CheckCircle2,
   Wrench,
-  Zap,
   ArrowUpRight,
   MessageCircle,
   ClipboardCheck,
   PackageCheck,
   Headphones,
   Star,
+  Network,
 } from "lucide-react";
 import {
   Accordion,
@@ -34,39 +31,21 @@ import CallToAction from "@/components/cta";
 const featuredServices = [
   {
     icon: ShoppingCart,
-    title: "Custom PC Builds",
+    title: "Products",
     description:
-      "A carefully matched setup built around your budget, workload, and performance goals.",
+      "PC, Laptop, and Printer.",
   },
   {
     icon: Wrench,
-    title: "Computer Repair",
+    title: "Services",
     description:
-      "Reliable diagnosis and repair for hardware, software, and performance issues.",
+      "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS.",
   },
   {
-    icon: Zap,
-    title: "Upgrades & Maintenance",
+    icon: Network,
+    title: "Networking",
     description:
-      "Make your current system faster, cleaner, and ready for what comes next.",
-  },
-  {
-    icon: Laptop,
-    title: "Laptop Services",
-    description:
-      "Setup, troubleshooting, upgrades, and support for laptops at home, school, or work.",
-  },
-  {
-    icon: Printer,
-    title: "Printer Solutions",
-    description:
-      "Get your printer installed, connected, and working smoothly when you need it.",
-  },
-  {
-    icon: MonitorCog,
-    title: "Business IT Support",
-    description:
-      "Practical technology solutions for offices and small businesses that need dependable support.",
+      "CCTV, WiFi, and other networking solutions.",
   },
 ];
 

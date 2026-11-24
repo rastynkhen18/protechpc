@@ -8,6 +8,7 @@ import SocialBanner from "@/components/SocialBanner";
 const blogVideos = [
   { title: "Hinge Repair", id: "1LjAtz_kfJSTKsma_pLVVhcUxkVYT2Hw7" },
   { title: "Keyboard Replacement", id: "1O2A_8aTXnyZimpbAJUsXLbf3WLpX9BAR" },
+  { title: "Laptop Repair", id: "133lIabuts5ZP-oKTVAGuaPLm2L71ALz3" },
   { title: "ProTechPC Vlog 1", id: "1URu9vJczB_tGMbTQaesyiZzmD2HuljYj" },
   { title: "ProTechPC Vlog 2", id: "1f5laghE6reZwKkAvVSyC6yRbQPovoXvQ" },
   { title: "ProTechPC Vlog 3", id: "1SbERzlxTWWCagRTTSVcSTYEcYqDbf9rC" },
@@ -26,7 +27,6 @@ const blogVideos = [
   { title: "ProTechPC Vlog 16", id: "1sVeh5g70J7zM-D0IJ0He9jouXwt1i0pL" },
   { title: "ProTechPC Vlog 17", id: "1iaA3tgo_9O0uf6bqTZ5JNmU4lCcuFbGu" },
   { title: "ProTechPC Vlog 18", id: "1aUpONFylJ_e8C8w2LLrVk89NViMFMRD3" },
-  { title: "Laptop Repair", id: "133lIabuts5ZP-oKTVAGuaPLm2L71ALz3" },
 ] as const;
 
 export default function BlogPage() {

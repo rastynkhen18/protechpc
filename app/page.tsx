@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
-  ShoppingCart,
+  Monitor,
   CheckCircle2,
   Wrench,
   ArrowUpRight,
@@ -30,22 +30,28 @@ import CallToAction from "@/components/cta";
 
 const featuredServices = [
   {
-    icon: ShoppingCart,
+    icon: Monitor,
     title: "Products",
     description:
       "PC, Laptop, and Printer.",
+    image:
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85",
   },
   {
     icon: Wrench,
     title: "Services",
     description:
       "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS.",
+    image:
+      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85",
   },
   {
     icon: Network,
     title: "Networking",
     description:
       "CCTV, WiFi, and other networking solutions.",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
@@ -343,27 +349,32 @@ export default function Home() {
               className="absolute left-1/2 top-1/2 hidden size-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-primary/20 lg:block"
             />
             <div className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredServices.map(({ icon: Icon, title, description }, index) => (
+              {featuredServices.map(({ icon: Icon, title, description, image }) => (
                 <article
                   key={title}
-                  className="group relative overflow-hidden rounded-3xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                  className="group relative min-h-96 overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Image
+                    src={image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
+                  <div className="relative flex h-full min-h-96 flex-col justify-end p-6 text-white">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-primary">
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
-                    <span className="font-mono text-xs font-semibold text-muted-foreground/60">
-                      0{index + 1}
-                    </span>
+                    <h3 className="mt-5 font-semibold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/80">
+                      {description}
+                    </p>
+                    <ArrowUpRight
+                      className="absolute bottom-6 right-6 size-4 text-white/60 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white"
+                      aria-hidden="true"
+                    />
                   </div>
-                  <h3 className="mt-8 font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {description}
-                  </p>
-                  <ArrowUpRight
-                    className="absolute bottom-6 right-6 size-4 text-muted-foreground/40 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary"
-                    aria-hidden="true"
-                  />
                 </article>
               ))}
             </div>

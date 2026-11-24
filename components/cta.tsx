@@ -14,7 +14,8 @@ export default function cta() {
                 className="absolute -bottom-28 -left-16 size-64 rounded-full border-[32px] border-primary/30"
             />
             <div className="relative">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/60">
+                <div className="h-px w-16 bg-primary" />
+                <p className="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-background/60">
                     Need a hand?
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold">Let&apos;s build your next setup.</h2>

@@ -107,12 +107,30 @@ const process = [
 ];
 
 const benefits = [
-  "Complete range — PC sets, gaming PCs, laptops, peripherals, printers, and parts under one roof",
-  "Quality, genuine products from trusted brands at competitive prices",
-  "Knowledgeable team that recommends what fits your needs and budget, not just what is in stock",
-  "Custom builds and upgrades tailored to your performance goals",
-  "In-house setup, repair, and maintenance services for complete peace of mind",
-  "Friendly, responsive after-sales support you can count on",
+  {
+    icon: Monitor,
+    title: "Right fit for every need",
+    description:
+      "Get practical recommendations for PCs, laptops, printers, and accessories—matched to your use and budget.",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Genuine, trusted quality",
+    description:
+      "Choose from reliable products and original parts from brands we stand behind.",
+  },
+  {
+    icon: Wrench,
+    title: "Built and upgraded properly",
+    description:
+      "From custom gaming rigs to component upgrades, we assemble, test, and tune for dependable performance.",
+  },
+  {
+    icon: Headphones,
+    title: "Support beyond the sale",
+    description:
+      "Count on friendly help for setup, troubleshooting, maintenance, warranty concerns, and future upgrades.",
+  },
 ];
 
 const googleMapsReviewsUrl =
@@ -285,7 +303,7 @@ export default function Home() {
                 className="mt-4 block h-1.5 w-32 bg-gradient-to-r from-accent via-destructive to-primary"
               /> */}
               <p className="mt-6 max-w-xl text-sm text-muted-foreground">
-               ProTechPC helps you get more from your technology. Find the right PC, laptop, or printer. With IT support and preventive maintenance to keep your devices secure, reliable, and performing at their best.
+                ProTechPC helps you get more from your technology. Find the right PC, laptop, or printer. With IT support and preventive maintenance to keep your devices secure, reliable, and performing at their best.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button
@@ -438,50 +456,70 @@ export default function Home() {
 
           <FadeInOnView>
             <div className="border-t border-border py-16 sm:py-20">
-              <div className="grid overflow-hidden rounded-3xl border border-border bg-muted/30 lg:grid-cols-[0.8fr_1.2fr]">
-                <div className="relative overflow-hidden bg-foreground p-8 text-background sm:p-10 lg:p-12">
-                  <div
-                    aria-hidden="true"
-                    className="absolute -right-20 -top-20 size-56 rounded-full border-[24px] border-background/10"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute -bottom-28 -left-16 size-64 rounded-full border-[32px] border-primary/30"
-                  />
-                  <div className="relative flex h-full flex-col">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-background/60">
-                      Why Choose Us
-                    </p>
-                    <h2 className="mt-5 max-w-sm text-3xl font-semibold tracking-tight sm:text-4xl">
-                      Technology support with fewer surprises.
-                    </h2>
-                    <p className="mt-5 max-w-md leading-7 text-background/70">
-                      Friendly, responsive after-sales support you can count on.
-                    </p>
-                    <div className="mt-auto hidden pt-12 sm:block">
-                      <div className="h-px w-16 bg-primary" />
-                      <p className="mt-4 text-sm font-medium text-background/70">
-                        Built around your needs.
-                      </p>
-                    </div>
+              <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+                <div>
+                  <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                    Why Choose Us
+                  </h2>
+                  <p className="mt-5 max-w-xl leading-7 text-muted-foreground">
+                    We combine the right products, technical expertise, and
+                    dependable service—so every purchase feels easy and every
+                    setup works the way it should.
+                  </p>
+
+                  <div className="mt-5 divide-y divide-border">
+                    {benefits.map(({ icon: Icon, title, description }, index) => (
+                      <article
+                        key={title}
+                        className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 py-5"
+                      >
+                        <div className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                          <Icon className="size-5" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold">{title}</h3>
+                          <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                            {description}
+                          </p>
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 </div>
 
-                <div className="grid gap-px bg-border sm:grid-cols-2">
-                  {benefits.map((benefit, index) => (
-                    <div
-                      key={benefit}
-                      className="group bg-background p-6 transition-colors hover:bg-muted/50 sm:p-8"
-                    >
-                      <div className="flex items-center justify-between">
-                        <CheckCircle2 className="size-5 text-green-500 transition-transform group-hover:scale-110" />
-                        <span className="font-mono text-xs font-semibold text-muted-foreground/60">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <p className="mt-8 text-sm leading-6">{benefit}</p>
+                <div className="relative min-h-[520px] sm:min-h-[620px]">
+                  <div className="absolute inset-y-0 right-0 w-[82%] overflow-hidden rounded-[2.5rem] bg-muted">
+                    <Image
+                      src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1200&q=85"
+                      alt="Technician setting up a computer workspace"
+                      fill
+                      sizes="(max-width: 1024px) 82vw, 38vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent" />
+                  </div>
+
+                  <div className="absolute bottom-6 left-0 w-[46%] overflow-hidden rounded-3xl border-[6px] border-background shadow-2xl sm:bottom-10">
+                    <div className="relative aspect-[4/5]">
+                      <Image
+                        src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=700&q=85"
+                        alt="Computer components prepared for a custom build"
+                        fill
+                        sizes="(max-width: 1024px) 46vw, 18vw"
+                        className="object-cover"
+                      />
                     </div>
-                  ))}
+                  </div>
+
+                  <div className="absolute right-4 top-6 flex items-center gap-3 rounded-2xl border border-border/70 bg-background/95 px-4 py-3 shadow-xl backdrop-blur sm:right-8 sm:top-10">
+                    <div className="flex size-9 items-center justify-center rounded-full bg-green-500/10 text-green-600">
+                      <CheckCircle2 className="size-5" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold">Tested & ready</p>
+                      <p className="text-xs text-muted-foreground">Before handover</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

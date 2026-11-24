@@ -459,7 +459,10 @@ export default function Home() {
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
                 <div>
                   <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                    Why Choose Us
+                    Why Choose{" "}
+                    <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
+                      Us?
+                    </span>
                   </h2>
                   <p className="mt-5 max-w-xl leading-7 text-muted-foreground">
                     We combine the right products, technical expertise, and

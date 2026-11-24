@@ -467,7 +467,7 @@ export default function Home() {
                     setup works the way it should.
                   </p>
 
-                  <div className="mt-5 divide-y divide-border">
+                  <div className="mt-5">
                     {benefits.map(({ icon: Icon, title, description }, index) => (
                       <article
                         key={title}

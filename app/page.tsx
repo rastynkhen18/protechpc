@@ -33,7 +33,7 @@ const featuredServices = [
     icon: Monitor,
     title: "Products",
     description:
-      "PC, Laptop, and Printer.",
+      "PCs, laptops, and printers for school, office, gaming, and business.",
     image:
       "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=900&q=85",
   },
@@ -41,7 +41,7 @@ const featuredServices = [
     icon: Wrench,
     title: "Services",
     description:
-      "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS.",
+      "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS Systems.",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85",
   },
@@ -49,7 +49,7 @@ const featuredServices = [
     icon: Network,
     title: "Networking",
     description:
-      "CCTV, WiFi, and other networking solutions.",
+      "CCTV and networking setups for your home, shop, school, and office.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
   },

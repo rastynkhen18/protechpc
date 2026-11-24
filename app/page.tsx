@@ -35,7 +35,7 @@ const featuredServices = [
     description:
       "PC, Laptop, and Printer.",
     image:
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=900&q=85",
   },
   {
     icon: Wrench,
@@ -43,7 +43,7 @@ const featuredServices = [
     description:
       "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS.",
     image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85",
   },
   {
     icon: Network,
@@ -52,34 +52,6 @@ const featuredServices = [
       "CCTV, WiFi, and other networking solutions.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const frequentlyAskedQuestions = [
-  {
-    question: "Can you help me choose the right PC or laptop?",
-    answer:
-      "Yes. Tell us how you plan to use it, your preferred specifications, and your budget. We will recommend options that fit your needs without unnecessary upgrades.",
-  },
-  {
-    question: "Do you offer custom PC builds and upgrades?",
-    answer:
-      "We do. We can build a new system from compatible quality components or upgrade your current PC to improve performance and extend its usable life.",
-  },
-  {
-    question: "What kinds of computer problems do you repair?",
-    answer:
-      "We help with hardware failures, slow performance, software issues, operating system setup, troubleshooting, cleaning, and other common computer problems.",
-  },
-  {
-    question: "Can you set up my new computer or printer?",
-    answer:
-      "Yes. Our setup service can include device installation, software and operating system configuration, printer connection, and basic testing.",
-  },
-  {
-    question: "Do you provide after-sales support?",
-    answer:
-      "Yes. We provide friendly guidance after your purchase and can help with warranty concerns, product questions, maintenance, and future upgrades.",
   },
 ];
 
@@ -130,6 +102,34 @@ const benefits = [
     title: "Support beyond the sale",
     description:
       "Count on friendly help for setup, troubleshooting, maintenance, warranty concerns, and future upgrades.",
+  },
+];
+
+const frequentlyAskedQuestions = [
+  {
+    question: "Can you help me choose the right PC or laptop?",
+    answer:
+      "Yes. Tell us how you plan to use it, your preferred specifications, and your budget. We will recommend options that fit your needs without unnecessary upgrades.",
+  },
+  {
+    question: "Do you offer custom PC builds and upgrades?",
+    answer:
+      "We do. We can build a new system from compatible quality components or upgrade your current PC to improve performance and extend its usable life.",
+  },
+  {
+    question: "What kinds of computer problems do you repair?",
+    answer:
+      "We help with hardware failures, slow performance, software issues, operating system setup, troubleshooting, cleaning, and other common computer problems.",
+  },
+  {
+    question: "Can you set up my new computer or printer?",
+    answer:
+      "Yes. Our setup service can include device installation, software and operating system configuration, printer connection, and basic testing.",
+  },
+  {
+    question: "Do you provide after-sales support?",
+    answer:
+      "Yes. We provide friendly guidance after your purchase and can help with warranty concerns, product questions, maintenance, and future upgrades.",
   },
 ];
 

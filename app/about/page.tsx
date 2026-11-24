@@ -5,10 +5,11 @@ import {
   Eye,
   Target,
 } from "lucide-react";
-import CallToAction from "@/components/cta";
+import SocialBanner from "@/components/SocialBanner";
 
 export default function AboutPage() {
   return (
+    <>
     <section aria-labelledby="about-us-title" className="overflow-hidden py-10">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
         <div className="border-t border-border pt-16 sm:pt-20">
@@ -62,8 +63,16 @@ export default function AboutPage() {
             </p>
           </article>
         </div>
-        <CallToAction />
+        <SocialBanner />
       </div>
     </section>
+    <iframe
+        title="Find ProtechPC on Google Maps"
+        src="https://www.google.com/maps?q=PROTECH+PC+-+Muzon&output=embed"
+        className="h-72 w-full border-0 sm:h-80"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </>
   );
 }

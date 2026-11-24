@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import CallToAction from "@/components/CallToAction";
 
 const products = [
   {
@@ -71,7 +72,7 @@ export default function page() {
             </div>
 
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="my-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {products.map(({ image, title, description }) => (
                 <article
                   key={title}
@@ -92,6 +93,7 @@ export default function page() {
               ))}
             </div>
         </div>
+        <CallToAction />
       </div>
     </section>
   )

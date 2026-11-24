@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CallToAction from "@/components/CallToAction";
 
 
 const services = [
@@ -72,7 +73,7 @@ export default function page() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="my-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {services.map(({ image, title, description }) => (
                 <article
                   key={title}
@@ -92,7 +93,7 @@ export default function page() {
                 </article>
               ))}
             </div>
-
+            <CallToAction />
           </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export default function cta() {
+export default function calltoaction() {
     return (
         <div className="relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-[2rem] bg-foreground px-7 py-9 text-background sm:flex-row sm:items-center sm:px-10">
             <div

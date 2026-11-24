@@ -25,7 +25,7 @@ import FadeInOnView from "@/components/FadeInOnView";
 import { Button } from "@/components/ui/button";
 import PartnersMarquee from "@/components/partnersMarquee";
 import ClientsMarquee from "@/components/clientsMarquee";
-import CallToAction from "@/components/cta";
+import CallToAction from "@/components/CallToAction";
 
 
 const featuredServices = [

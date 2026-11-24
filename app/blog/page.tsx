@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import SocialBanner from "@/components/SocialBanner";
 
 const driveFolderUrl =
   "https://drive.google.com/drive/folders/1qFPDPwjBnyS4NSg0Z2OvvVoCzLir0cMe?usp=sharing";
-const facebookPostUrl = "https://www.facebook.com/ProTechPcStore/posts";
+
 
 const blogVideos = [
   { title: "Hinge Repair", id: "1LjAtz_kfJSTKsma_pLVVhcUxkVYT2Hw7" },
@@ -28,19 +29,6 @@ const blogVideos = [
   { title: "ProTechPC Vlog 17", id: "1iaA3tgo_9O0uf6bqTZ5JNmU4lCcuFbGu" },
   { title: "ProTechPC Vlog 18", id: "1aUpONFylJ_e8C8w2LLrVk89NViMFMRD3" },
   { title: "Laptop Repair", id: "133lIabuts5ZP-oKTVAGuaPLm2L71ALz3" },
-] as const;
-
-const facebookHighlights = [
-  {
-    eyebrow: "Follow along",
-    title: "We’re open today",
-    description:
-      "Stay updated with ProTechPC. Follow our Facebook page for opening updates, new products, services, and the latest announcements!",
-    href: "https://www.facebook.com/ProTechPcStore",
-    action: "Visit our Facebook page",
-    image:
-      "https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/896739844_1568474625296648_7526707731228931221_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=RXLjjkTn0AcQ7kNvwG9JcYt&_nc_oc=Adr-KJc9sOtIfeSF5VrpaWtFpHZ_fi8VVvKXSZl6WLWORaMEC0fnru8r4kHsStIAdL0&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=TbYOIyadBdlPqJJ6ztCO4g&_nc_ss=79289&oh=00_AQRSuCy_8853znzH9N9OdzMjnVonsEO5dqFNoMhmxcuebw&oe=6B01C013",
-  },
 ] as const;
 
 export default function BlogPage() {
@@ -108,52 +96,7 @@ export default function BlogPage() {
               </article>
             ))}
           </div>
-
-          <div className="mt-16 border-t border-border pt-12 sm:mt-20 sm:pt-16">
-            <div className="mt-8 grid gap-6">
-              {facebookHighlights.map((highlight) => (
-                <article
-                  key={highlight.title}
-                  className="group grid overflow-hidden rounded-3xl border border-border bg-muted/30 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 md:grid-cols-[1.05fr_0.95fr]"
-                >
-                  {highlight.image ? (
-                    <div
-                      className="relative min-h-64 overflow-hidden md:min-h-80"
-                    >
-                      <img
-                        src={highlight.image}
-                        alt={highlight.title}
-                        className="h-full w-full object-contain"
-                      />
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-                      />
-                    </div>
-                  ) : null}
-                  <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                      {highlight.eyebrow}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                      {highlight.title}
-                    </h3>
-                    <p className="mt-4 max-w-lg leading-7 text-muted-foreground">
-                      {highlight.description}
-                    </p>
-                    <a
-                      href={highlight.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-7 inline-flex w-fit items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                    >
-                      {highlight.action} <span className="ml-2" aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          <SocialBanner />
         </div>
       </div>
     </section>

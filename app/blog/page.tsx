@@ -102,22 +102,10 @@ export default function BlogPage() {
                       <Play className="ml-1 size-6 fill-current" />
                     </span>
                   </span>
+                  <h2 className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent px-5 pb-4 pt-12 text-left text-lg font-semibold tracking-tight text-white">
+                    {video.title}
+                  </h2>
                 </button>
-                <div className="flex items-center justify-between gap-4 p-5">
-                  <div>
-                    <h2 className="text-lg font-semibold tracking-tight">
-                      {video.title}
-                    </h2>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setActiveVideo(video)}
-                    aria-label={`Play ${video.title}`}
-                    className="shrink-0 rounded-full border border-border px-3 py-2 text-sm font-semibold transition-colors hover:bg-background"
-                  >
-                    Play
-                  </button>
-                </div>
               </article>
             ))}
           </div>

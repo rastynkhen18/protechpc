@@ -11,7 +11,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Location",
-    value: "2nd Floor LB Pagala Bldg., Brgy. Muzon Proper, San Jose del Monte, Philippines, 3023",
+    value: "2nd Floor, LB Pagala Bldg. Muzon Proper, City of San Jose Del Monte, Bulacan, Philippines, 3023",
     href: "https://maps.app.goo.gl/5wqbs7a6ufGHwkKF6",
   },
   {

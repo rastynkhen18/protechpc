@@ -343,16 +343,16 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto flex w-fit items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               <span className="h-px w-8 bg-primary" />
-              What We Do
+             Technology that works for you.
               <span className="h-px w-8 bg-accent" />
             </div>
             <h2
               id="featured-title"
               className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl"
             >
-              Technology that works{" "}
+               What We {" "}
               <span className="bg-gradient-to-r from-primary via-destructive to-accent bg-clip-text text-transparent">
-                for you.
+                Do?
               </span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl leading-7 text-muted-foreground">

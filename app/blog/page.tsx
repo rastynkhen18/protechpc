@@ -28,7 +28,6 @@ const blogVideos = [
   { title: "ProTechPC Vlog 16", id: "1wH5jilxRcxQC44PaqHSy2VUOgIfoQBwD" },
   { title: "ProTechPC Vlog 17", id: "1Q7oikVpcLzuLnSMlk7LeoZidSxe2CeaX" },
   { title: "ProTechPC Vlog 18", id: "1w2sFTFszbCh1qFqAS1NegRkMzamHej7C" },
-
 ] as const;
 
 export default function BlogPage() {

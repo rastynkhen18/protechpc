@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Play, X } from "lucide-react";
+import Image from "next/image";
+import { X } from "lucide-react";
 import SocialBanner from "@/components/SocialBanner";
 
 
@@ -79,7 +80,7 @@ export default function BlogPage() {
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blogVideos.map((video, index) => (
+            {blogVideos.map((video) => (
               <article
                 key={video.id}
                 className="overflow-hidden rounded-2xl border border-border bg-muted/30 shadow-sm"
@@ -88,20 +89,15 @@ export default function BlogPage() {
                   type="button"
                   onClick={() => setActiveVideo(video)}
                   className="group relative aspect-video w-full overflow-hidden bg-black text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  aria-label={`Play ${video.title}`}
+                  aria-label={`Watch ${video.title}`}
                 >
-                  <iframe
-                    title={`${video.title} preview`}
-                    src={`https://drive.google.com/file/d/${video.id}/preview`}
-                    className="pointer-events-none h-full w-full border-0"
-                    loading={index < 3 ? "eager" : "lazy"}
-                    tabIndex={-1}
+                  <Image
+                    src={`https://lh3.googleusercontent.com/d/${video.id}=w640`}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
                   />
-                  <span className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors group-hover:bg-black/35">
-                    <span className="flex size-14 items-center justify-center rounded-full bg-white text-black shadow-lg transition-transform group-hover:scale-105">
-                      <Play className="ml-1 size-6 fill-current" />
-                    </span>
-                  </span>
                   <h2 className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent px-5 pb-4 pt-12 text-left text-lg font-semibold tracking-tight text-white">
                     {video.title}
                   </h2>

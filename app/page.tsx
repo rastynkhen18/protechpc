@@ -47,7 +47,7 @@ const featuredServices = [
   },
   {
     icon: Network,
-    title: "Networking",
+    title: "Networking Support",
     description:
       "CCTV and networking setups for your home, shop, school, and office.",
     image:

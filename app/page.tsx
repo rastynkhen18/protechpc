@@ -31,6 +31,7 @@ import CallToAction from "@/components/CallToAction";
 const featuredServices = [
   {
     icon: Monitor,
+    iconBackground: "bg-primary",
     title: "Products",
     description:
       "PCs, laptops, and printers for school, office, gaming, and business.",
@@ -39,7 +40,8 @@ const featuredServices = [
   },
   {
     icon: Wrench,
-    title: "Services",
+    iconBackground: "bg-destructive",
+    title: "Services", 
     description:
       "IT Support and Preventive Maintenance for PC, Laptop, Printer, and POS Systems.",
     image:
@@ -47,9 +49,10 @@ const featuredServices = [
   },
   {
     icon: Network,
+    iconBackground: "bg-accent",
     title: "Networking Support",
     description:
-      "CCTV, Wi-Fi configuration, and networking setups for your home, shop, school, and office.",
+      "CCTV, Wi-Fi configuration, and networking setups for home, shop, school, and office.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
   },
@@ -367,7 +370,7 @@ export default function Home() {
               className="absolute left-1/2 top-1/2 hidden size-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-primary/20 lg:block"
             />
             <div className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredServices.map(({ icon: Icon, title, description, image }) => (
+              {featuredServices.map(({ icon: Icon, iconBackground, title, description, image }) => (
                 <article
                   key={title}
                   className="group relative min-h-96 overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
@@ -381,7 +384,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
                   <div className="relative flex h-full min-h-96 flex-col justify-end p-6 text-white">
-                    <div className="flex size-12 items-center justify-center rounded-2xl bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-primary">
+                    <div className={`flex size-12 items-center justify-center rounded-2xl text-white shadow-lg ${iconBackground}`}>
                       <Icon className="size-5" aria-hidden="true" />
                     </div>
                     <h3 className="mt-5 font-semibold">{title}</h3>

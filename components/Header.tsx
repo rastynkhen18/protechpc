@@ -88,9 +88,9 @@ const services = [
 	},
 	{
 		icon: MonitorCog,
-		title: "Computer & Laptop Repair",
+		title: "Computer, Laptop, & Printer Repair",
 		description:
-			"Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops and laptops.",
+			"Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops, laptops, and printers.",
 	},
 	{
 		icon: Cpu,

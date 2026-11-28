@@ -17,7 +17,7 @@ const services = [
   },
   {
     image: "photo-1593642532400-2682810df593",
-    title: "Computer, Laptop & Printer Repair",
+    title: "Computer, Laptop, & Printer Repair",
     description:
       "Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops, laptops, and printers.",
   },

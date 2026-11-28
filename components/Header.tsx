@@ -11,10 +11,13 @@ import {
 	Laptop,
 	Menu,
 	Monitor,
-	MonitorCog,
 	Gpu,
 	Printer,
 	Network,
+	Headphones,
+	ClipboardCheck,
+	Wrench,
+	ShieldCheck,
 	X,
 } from "lucide-react";
 import Protechpc from "@/assets/protechpc.png";
@@ -76,19 +79,19 @@ const products = [
 
 const services = [
 	{
-		icon: MonitorCog,
+		icon: Headphones,
 		title: "IT Support",
 		description:
 			"On-site and remote technical assistance for hardware, software, and network concerns, helping clients resolve issues quickly and get back to work.",
 	},
 	{
-		icon: MonitorCog,
+		icon: ClipboardCheck,
 		title: "Preventive Maintenance",
 		description:
 			"Scheduled inspection, cleaning, updates, performance checks, and system health monitoring to extend equipment life and minimize unexpected downtime.",
 	},
 	{
-		icon: MonitorCog,
+		icon: Wrench,
 		title: "Computer, Laptop, & Printer Repair",
 		description:
 			"Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops, laptops, and printers.",
@@ -100,7 +103,7 @@ const services = [
 			"RAM, SSD, and component upgrades, plus operating system and software optimization to improve speed and performance.",
 	},
 	{
-		icon: Printer,
+		icon: ShieldCheck,
 		title: "Installation & Security Support",
 		description:
 			"Setup of new computers, printers, peripherals, operating system installations, data backup, virus and malware removal.",

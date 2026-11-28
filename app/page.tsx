@@ -49,7 +49,7 @@ const featuredServices = [
     icon: Network,
     title: "Networking Support",
     description:
-      "CCTV and networking setups for your home, shop, school, and office.",
+      "CCTV, Wi-Fi configuration, and networking setups for your home, shop, school, and office.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85",
   },
@@ -308,7 +308,7 @@ export default function Home() {
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Button
                   size="lg"
-                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base hover:shadow-primary/30 md:text-sm"
+                  className="relative h-[38px] w-auto gap-2 rounded-[calc(var(--radius-md)*(1+(38/26-1)*0.35))] px-4 py-2 text-base text-primary-foreground hover:shadow-primary/30 md:text-sm"
                   render={<Link href="/products" />}
                 >
                   Explore our products

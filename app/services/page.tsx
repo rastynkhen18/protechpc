@@ -17,9 +17,9 @@ const services = [
   },
   {
     image: "photo-1593642532400-2682810df593",
-    title: "Computer & Laptop Repair",
+    title: "Computer, Laptop & Printer Repair",
     description:
-      "Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops and laptops.",
+      "Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops, laptops, and printers.",
   },
   {
     image: "photo-1597872200969-2b65d56bd16b",
@@ -29,21 +29,15 @@ const services = [
   },
   {
     image: "photo-1516321318423-f06f85e504b3",
-    title: "Installation & Setup",
+    title: "Installation & Security Support",
     description:
-      "Setup of new computers, printers, peripherals, operating systems, and software, including configuration and user orientation.",
+      "Setup of new computers, printers, peripherals, operating system installations, data backup, virus and malware removal.",
   },
   {
     image: "photo-1558494949-ef010cbdcc31",
     title: "Networking Support",
     description:
       "Basic network setup, Wi-Fi configuration, and troubleshooting for homes and offices.",
-  },
-  {
-    image: "photo-1563013544-824ae1b704d3",
-    title: "Software & Security Support",
-    description:
-      "Operating system installation, software setup, antivirus protection, data backup, and virus and malware removal.",
   },
 ];
 
@@ -73,7 +67,7 @@ export default function page() {
               </p>
             </div>
 
-            <div className="my-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="my-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map(({ image, title, description }) => (
                 <article
                   key={title}

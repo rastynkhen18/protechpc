@@ -100,21 +100,15 @@ const services = [
 	},
 	{
 		icon: Printer,
-		title: "Installation & Setup",
+		title: "Installation & Security Support",
 		description:
-			"Setup of new computers, printers, peripherals, operating systems, and software, including configuration and user orientation.",
+			"Setup of new computers, printers, peripherals, operating system installations, data backup, virus and malware removal.",
 	},
 	{
 		icon: Network,
 		title: "Networking Support",
 		description:
 			"Basic network setup, Wi-Fi configuration, and troubleshooting for homes and offices.",
-	},
-	{
-		icon: MonitorCog,
-		title: "Software & Security Support",
-		description:
-			"Operating system installation, software setup, antivirus protection, data backup, and virus and malware removal.",
 	},
 ] as const;
 

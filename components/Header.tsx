@@ -14,6 +14,7 @@ import {
 	Gpu,
 	Printer,
 	Network,
+	BatteryCharging,
 	Headphones,
 	ClipboardCheck,
 	Wrench,
@@ -71,7 +72,7 @@ const products = [
 	},
 	{
 		title: "Laptop Parts",
-		icon: Cpu,
+		icon: BatteryCharging,
 		description:
 			"Replacement batteries, chargers and adapters, screens, keyboards, storage, memory, and other laptop components.",
 	},

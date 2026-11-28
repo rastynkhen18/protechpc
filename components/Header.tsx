@@ -12,6 +12,7 @@ import {
 	Menu,
 	Monitor,
 	MonitorCog,
+	Gpu,
 	Printer,
 	Network,
 	X,
@@ -93,7 +94,7 @@ const services = [
 			"Diagnostics, troubleshooting, hardware replacement, and component-level support for desktops, laptops, and printers.",
 	},
 	{
-		icon: Cpu,
+		icon: Gpu,
 		title: "Upgrades & Optimization",
 		description:
 			"RAM, SSD, and component upgrades, plus operating system and software optimization to improve speed and performance.",
